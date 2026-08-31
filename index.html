@@ -165,7 +165,7 @@
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="top-bar-left">
-                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" title="點擊直撥客服專線">(02) 2345-6789 📱</a></span>
+                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" title="點擊直撥客服專線" aria-label="撥打客服專線 02-2345-6789">(02) 2345-6789 📱</a></span>
                 <span>⏰ 平日 09:00 - 18:00</span>
                 <span>💬 LINE：@shop123</span>
             </div>
@@ -183,11 +183,11 @@
         </div>
     </div>
 
-    <!-- 頁首 H1 標題 & 搜尋框並排區 (Alt+U 定位區) -->
+    <!-- 🌟 頁首 H1 標題 & 搜尋框並排區 (Alt+U 定位區) -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between;">
-                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]" aria-label="萬寶屋創意實業社電子型錄首頁">
+                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區；快速鍵 Alt 加 U" aria-label="回到萬寶屋創意實業社首頁與搜尋區">
                     <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:0.25rem;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
                 </a>
                 <button type="button" class="mobile-theme-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
@@ -209,11 +209,11 @@
         <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
         <div class="menu-backdrop" id="menu-backdrop" onclick="toggleMobileMenu()"></div>
 
-        <!-- 左側選單 -->
+        <!-- 🌟 左側選單：精簡 7 大主分類選單 -->
         <nav role="navigation" class="sidebar-nav" id="sidebar-nav" aria-label="產品分類樹狀選單">
             <h2>
-                <a href="#sidebar-nav" id="accesskey-L" accesskey="L" tabindex="0" title="跳至左側產品分類選單區 [Alt+L]" style="color:#fff; text-decoration:none; display:inline-block;">
-                    <span style="color:#ffeb3b; margin-right:0.25rem;">:::</span>產品分類
+                <a href="#sidebar-nav" id="accesskey-L" accesskey="L" tabindex="0" title="跳至左側產品分類選單區；快速鍵 Alt 加 L" aria-label="跳至左側產品分類選單區" style="color:#fff; text-decoration:none; display:inline-block;">
+                    <span style="color:#ffeb3b; margin-right:0.25rem;" aria-hidden="true">:::</span>產品分類
                 </a>
                 <button type="button" onclick="toggleMobileMenu()" aria-label="關閉選單">✕</button>
             </h2>
@@ -232,7 +232,7 @@
             </ul>
         </nav>
 
-        <!-- 中央內容區 -->
+        <!-- 中央內容區 (Alt+C 快捷鍵區域) -->
         <main id="main-content" role="main" class="main-content" tabindex="-1">
             
             <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
@@ -240,8 +240,8 @@
             <nav aria-label="麵包屑導航" class="breadcrumb">
                 <ol id="breadcrumb-list">
                     <li>
-                        <a href="javascript:void(0)" id="accesskey-C" tabindex="0" title="跳至主要內容展示區 [Alt+C]" style="text-decoration:none; color:inherit;">
-                            <span style="color:var(--primary-red); font-weight:bold; margin-right:0.25rem;">:::</span>
+                        <a href="javascript:void(0)" id="accesskey-C" tabindex="0" title="跳至主要內容展示區；快速鍵 Alt 加 C" aria-label="定位主要內容展示區" style="text-decoration:none; color:inherit;">
+                            <span style="color:var(--primary-red); font-weight:bold; margin-right:0.25rem;" aria-hidden="true">:::</span>
                         </a>
                         <a href="index.html" title="點擊返回首頁">首頁</a>
                     </li>
@@ -283,17 +283,19 @@
                 </div>
             </div>
 
-            <!-- SEO 停用 JS 備援區塊 -->
+            <!-- SEO 停用 JS 備援區塊 (修復 Freego 爬抓舊網址問題) -->
             <noscript>
                 <section style="padding: 1.25rem; background: #fff; border: 0.125rem solid #8b0000; border-radius: 0.75rem; margin-bottom: 1.25rem;">
-                    <h2>📂 本站熱門推薦文具目錄 (無 JavaScript 預覽版)</h2>
-                    <p>萬寶屋創意實業社提供以下精選熱門商品，適合政府機關、學校與企業採購：</p>
+                    <h2>📂 本站商品目錄專區 (無 JavaScript 備援版)</h2>
+                    <p>萬寶屋創意實業社提供豐富辦公與公務採購商品，請點擊下方分類瀏覽：</p>
                     <ul style="line-height: 2;">
-                        <li><a href="product/01_03_001.html"><strong>UNI 三菱 UM-151 超極細中性筆 0.38 (經典黑筆)</strong></a> - 建議售價：25元</li>
-                        <li><a href="product/06_08_001.html"><strong>風信子 再生影印紙 80g A4 (10包/箱)</strong></a> - 建議售價：850元</li>
-                        <li><a href="product/02_01_001.html"><strong>PLUS 普樂士 修正帶 5mmx6m</strong></a> - 建議售價：35元</li>
-                        <li><a href="product/03_01_001.html"><strong>3M Scotch 隱形膠帶 帶切刀</strong></a> - 建議售價：45元</li>
-                        <li><a href="product/04_01_001.html"><strong>MAX 美克司 10號省力訂書機</strong></a> - 建議售價：120元</li>
+                        <li><a href="category.html?cate=01_00">文具與美術教具目錄</a></li>
+                        <li><a href="category.html?cate=02_00">水電材料與修繕五金目錄</a></li>
+                        <li><a href="category.html?cate=03_00">3C 數位與電腦週邊目錄</a></li>
+                        <li><a href="category.html?cate=04_00">事務機器與辦公耗材目錄</a></li>
+                        <li><a href="category.html?cate=05_00">紙品帳簿與收納用品目錄</a></li>
+                        <li><a href="category.html?cate=06_00">本土童玩與懷舊民俗目錄</a></li>
+                        <li><a href="category.html?cate=07_00">其他綜合商品目錄</a></li>
                     </ul>
                 </section>
             </noscript>
@@ -337,7 +339,7 @@
             <dt>產地/證明：</dt><dd id="modal-origin">未標記</dd>
             <dt>來源供應商：</dt><dd id="modal-supplier">萬寶屋創意實業社</dd>
             <dt>公務與標章：</dt><dd id="modal-badges" style="font-weight: bold;">一般合格商品</dd>
-            <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;">(02) 2345-6789 📱 (點擊撥號)</a></dd>
+            <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;" aria-label="撥打專線 02-2345-6789">(02) 2345-6789 📱 (點擊撥號)</a></dd>
         </dl>
         <div class="modal-action-btns">
             <button type="button" class="btn-copy-code" onclick="copyBarcode()">📋 複製國際條碼</button>
@@ -353,17 +355,19 @@
 
     <!-- 右下角懸浮按鈕 -->
     <div class="floating-btn-group" style="position: fixed; bottom: 1.5625rem; right: 1.5625rem; display: flex; flex-direction: column; gap: 0.625rem; z-index: 999;">
-        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 2.8125rem; height: 2.8125rem; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
+        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回電子型錄首頁" style="width: 2.8125rem; height: 2.8125rem; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
         <button type="button" id="backToTopBtn" class="back-to-top" onclick="scrollToTop()" aria-label="回到頁面頂部" style="position: static; display: none;">▲</button>
     </div>
 
-    <!-- 頁尾宣告 -->
+    <!-- 頁尾宣告區 -->
     <footer role="contentinfo" class="site-footer" id="footer-area">
-        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:0.25rem;">:::</a>
+        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區；快速鍵 Alt 加 Z" aria-label="跳至頁尾版權宣告區" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:0.25rem;">
+            <span aria-hidden="true">:::</span>
+        </a>
         <p style="display:inline-block; margin:0;">
             &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
             以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準 ｜ 
-            <a href="about_us.html">關於我們 (About Us)</a>
+            <a href="about_us.html" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
         </p>
     </footer>
 
