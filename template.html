@@ -66,7 +66,7 @@
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="top-bar-left">
-                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" title="點擊直撥客服專線">(02) 2345-6789 📱</a></span>
+                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" aria-label="撥打客服專線 02-2345-6789">(02) 2345-6789 📱</a></span>
                 <span>⏰ 平日 09:00 - 18:00</span>
                 <span>💬 LINE：@shop123</span>
             </div>
@@ -83,11 +83,11 @@
         </div>
     </div>
 
-    <!-- 頁首 H1 標題 & Alt+U 定位區 -->
+    <!-- 頁首 H1 標題 & Alt+U 定位區 (HM1240401C 嚴格合格寫法) -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <h1>
-                <a href="../index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]">
+                <a href="../index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區；快速鍵 Alt 加 U" aria-label="回到萬寶屋創意實業社首頁與搜尋區">
                     <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
                 </a>
             </h1>
@@ -104,12 +104,12 @@
             <nav aria-label="麵包屑導航" class="breadcrumb">
                 <ol>
                     <li>
-                        <a href="javascript:void(0)" id="accesskey-C" accesskey="C" tabindex="0" title="跳至主要內容展示區 [Alt+C]" style="text-decoration:none; color:inherit;">
-                            <span style="color:var(--primary-red); font-weight:bold; margin-right:4px;">:::</span>
+                        <a href="javascript:void(0)" id="accesskey-C" accesskey="C" tabindex="0" title="跳至主要內容展示區；快速鍵 Alt 加 C" aria-label="定位主要內容展示區">
+                            <span style="color:var(--primary-red); font-weight:bold; margin-right:4px;" aria-hidden="true">:::</span>
                         </a>
-                        <a href="../index.html">首頁</a>
+                        <a href="../index.html" aria-label="返回電子型錄首頁">首頁</a>
                     </li>
-                    <li><a href="../category.html">商品分類</a></li>
+                    <li><a href="../category.html" aria-label="前往商品分類總覽列表">商品分類</a></li>
                     <li aria-current="page">{{TITLE}}</li>
                 </ol>
             </nav>
@@ -119,6 +119,7 @@
                 
                 <div class="product-detail-layout">
                     <div class="product-detail-img-box">
+                        <!-- HM1110106C 嚴格合格寫法：alt 填寫完整商品名稱照片，禁止使用 title 或空值 -->
                         <img src="../images/{{IMAGE}}" alt="{{TITLE}} 商品實物照片" class="product-detail-img" loading="lazy" onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><rect width=\'100%\' height=\'100%\' fill=\'%23f1f5f9\'/><text x=\'50%\' y=\'50%\' font-size=\'15\' fill=\'%2364748b\' font-weight=\'bold\' dominant-baseline=\'middle\' text-anchor=\'middle\'>🖼️ 圖片建置中</text></svg>';">
                     </div>
 
@@ -133,7 +134,7 @@
                             <dt>來源供應商：</dt><dd>{{SUPPLIER}}</dd>
                             <dt>公務標章／認證：</dt><dd>{{BADGES}}</dd>
                             <dt>詳細描述：</dt><dd>{{DESC}}</dd>
-                            <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;">(02) 2345-6789 📱 (點擊直撥)</a></dd>
+                            <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;" aria-label="撥打專線 02-2345-6789">(02) 2345-6789 📱 (點擊直撥)</a></dd>
                         </dl>
 
                         <!-- 公務報帳與核銷工具按鈕 -->
@@ -148,18 +149,20 @@
         </main>
     </div>
 
-    <!-- 右下角懸浮按鈕 -->
+    <!-- 右下角懸浮按鈕 (HM1240401C 超連結文字與 aria-label 完全合格) -->
     <div class="floating-btn-group" style="position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
-        <a href="../index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
+        <a href="../index.html" class="float-home-btn" title="返回首頁" aria-label="返回電子型錄首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
     </div>
 
-    <!-- 頁尾 (Alt+Z 定位點) -->
+    <!-- 頁尾宣告區 (Alt+Z 定位點) -->
     <footer role="contentinfo" class="site-footer" id="footer-area">
-        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
+        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區；快速鍵 Alt 加 Z" aria-label="跳至頁尾版權宣告區">
+            <span aria-hidden="true" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</span>
+        </a>
         <p style="display:inline-block; margin:0;">
             &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
             以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準 ｜ 
-            <a href="../about_us.html">關於我們 (About Us)</a>
+            <a href="../about_us.html" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
         </p>
     </footer>
 
