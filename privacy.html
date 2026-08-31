@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隱私權及安全政策 - 萬寶企業文具行 電子型錄網</title>
+    
+    <!-- SEO 最佳化設定 -->
+    <meta name="description" content="萬寶企業文具行電子型錄展示網之隱私權及資訊安全政策宣告，說明個人資料保護、Cookie 使用，並以 WCAG 2.2 AAA 無障礙標準與 WCAG 3.0 草案為設計方向。">
+    <meta name="keywords" content="隱私權政策,資訊安全政策,個人資料保護,無障礙網頁,WCAG2.2AAA,WCAG3.0,綠色採購,萬寶文具">
+    <meta name="author" content="萬寶企業文具行">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#8b0000">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- SEO 宣告標準網址 (Canonical Tag) -->
+    <link rel="canonical" href="https://www.wonbow-stationery.com/privacy.html">
+
+    <!-- Open Graph (OG) 社群分享標籤 -->
+    <meta property="og:title" content="隱私權及安全政策 - 萬寶企業文具行 電子型錄網">
+    <meta property="og:description" content="說明本網站隱私權保護政策、Cookie 使用，並以符合 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 草案精神為設計目標。">
+    <meta property="og:image" content="images/home-banner.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="萬寶企業文具行">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Google 結構化資料 (BreadcrumbList 麵包屑 Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首頁",
+        "item": "https://www.wonbow-stationery.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "隱私權及安全政策",
+        "item": "https://www.wonbow-stationery.com/privacy.html"
+      }]
+    }
+    </script>
+
+    <!-- SEO 防閃爍日夜模式極速腳本 -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="js/fuse.js" defer></script>
+    <script src="js/products.js"></script>
+    <script src="js/global-search.js" defer></script>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">跳過導航選單，直接進入主要內容區</a>
+
+    <!-- 頂部資訊列 -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" title="點擊直撥客服專線">(02) 2345-6789 📱</a></span>
+                <span>⏰ 平日 09:00 - 18:00</span>
+                <span>💬 LINE：@shop123</span>
+            </div>
+            <div class="top-bar-right">
+                <nav aria-label="服務與政策選單">
+                    <a href="eco_friendly.html" style="color: #86efac; font-weight: bold;">🌱 綠色採購專區</a>
+                    <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold;">🛡️ 反詐騙宣導</a>
+                    <a href="privacy.html" aria-current="page" style="font-weight: bold;">隱私權政策</a>
+                    <a href="sitemap.html">網站導覽</a>
+                    <a href="about_us.html">關於我們</a>
+                    <a href="https://greenlifestyle.moenv.gov.tw/categories/greenProductSearch" target="_blank" rel="noopener noreferrer" style="color: #86efac; font-weight: bold; border: 1px solid #86efac; padding: 2px 8px; border-radius: 12px; margin-left: 5px;">🔍 環保標章查詢網 🔗</a>
+                    <button type="button" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 2px 10px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 8px;">🌙 切換模式</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁首 H1 標題 & Alt+U 定位區 -->
+    <header role="banner" class="site-header" id="header-area">
+        <div class="header-container">
+            <h1>
+                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到頁首與搜尋區 [Alt+U]">
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶企業文具行 - 電子型錄展示網
+                </a>
+            </h1>
+            <div class="search-box">
+                <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
+                <button type="button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <a href="#main-content" id="accesskey-L" accesskey="L" tabindex="-1" title="產品分類選單區 [Alt+L]" style="position:absolute; left:-9999px;">:::</a>
+
+        <main id="main-content" role="main" class="main-content" tabindex="-1" style="width: 100%;">
+            
+            <div id="sr-announcer" style="position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip:rect(0,0,0,0); border:0;" aria-live="polite" aria-atomic="true"></div>
+
+            <nav aria-label="麵包屑導航" class="breadcrumb">
+                <ol>
+                    <li>
+                        <a href="javascript:void(0)" id="accesskey-C" accesskey="C" tabindex="0" title="跳至主要內容展示區 [Alt+C]" style="text-decoration:none; color:inherit;">
+                            <span style="color:var(--primary-red); font-weight:bold; margin-right:4px;">:::</span>
+                        </a>
+                        <a href="index.html" title="點擊返回首頁">首頁</a>
+                    </li>
+                    <li aria-current="page">隱私權及安全政策</li>
+                </ol>
+            </nav>
+
+            <div class="page-toolbar">
+                <h2>🔒 隱私權及安全政策宣告</h2>
+            </div>
+
+            <noscript>
+                <section style="padding: 20px; background: #fff; border: 2px solid #8b0000; border-radius: 12px; margin-bottom: 20px;">
+                    <h2>🔒 隱私權保護政策摘要 (無 JavaScript 預覽版)</h2>
+                    <p>萬寶企業文具行電子型錄展示網為純靜態網站，不強制蒐集會員資料與信用卡號，並以 WCAG 2.2 AAA 無障礙標準為設計目標。</p>
+                </section>
+            </noscript>
+
+            <div style="padding: 25px; border-radius: 12px; border: 2px solid var(--border-strong); line-height: 1.8; box-shadow: var(--card-shadow); background: var(--light-gray);">
+                <p>歡迎瀏覽「萬寶企業文具行 電子型錄展示網」（以下簡稱本網站）。為了讓您能夠安心使用本網站提供的各項服務與資訊，特此向您說明本網站的隱私權及資訊安全政策，以保障您的權益：</p>
+
+                <h3 style="color: var(--primary-red); margin-top: 20px; font-size: 1.1rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 6px;">一、 個人資料之蒐集、處理及利用方式</h3>
+                <ul style="margin-left: 20px;">
+                    <li>本網站為純靜態電子型錄展示網，未設有線上購物車、會員登入系統或金流交易功能，因此<strong>不會強制蒐集</strong>您的姓名、身分證字號、信用卡號或住址等敏感隱私資料。</li>
+                    <li>當您透過電話（<a href="tel:0223456789" style="color: var(--primary-red); font-weight: bold; text-decoration: none;">02-2345-6789</a>）、LINE 或電子郵件聯繫客服時，我們僅會記錄您主動提供的聯繫方式與諮詢需求，用於後續商品答覆及售後服務。</li>
+                </ul>
+
+                <h3 style="color: var(--primary-red); margin-top: 20px; font-size: 1.1rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 6px;">二、 Cookie 與瀏覽紀錄之使用</h3>
+                <p>為了提供您最佳的網頁互動體驗，本網站可能會在您的電腦中放置並調閱我們的 Cookie（例如記錄您的每頁顯示數量或排序偏好）。您可以透過設定瀏覽器安全性層級，拒絕 Cookie 的寫入。</p>
+
+                <h3 style="color: var(--primary-red); margin-top: 20px; font-size: 1.1rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 6px;">三、 無障礙網頁環境建置承諾</h3>
+                <p>本網站全站以符合數位發展部無障礙網頁規範（WCAG 2.2 AAA 標準級）為設計目標建置，支援全鍵盤無障礙快捷鍵操作 (Alt+U/L/C/Z)、高對比護眼閱讀防護、螢幕閱讀器即時語音播報 (`aria-live="polite"`)，並提供完整語意化標籤。</p>
+
+                <section class="seo-authority-block" style="border-left: 5px solid var(--primary-red); padding: 18px; margin-top: 25px; border-radius: 0 8px 8px 0; border-top: 1px solid var(--border-light); border-right: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
+                    <h3 style="margin-top: 0; font-size: 1.05rem; color: var(--primary-red); border: none; padding: 0;">🏛️ 無障礙網頁規範與前瞻發展宣告</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 0; line-height: 1.6;">
+                        本網站「萬寶企業文具行電子型錄網」在開發上致力於遵循數位發展部無障礙網頁開發規範（WCAG 2.2 AAA 標準級）進行網頁結構優化，並前瞻參考 W3C WCAG 3.0 草案精神（如 APCA 感知視覺色差與簡明語意說明）。我們提供完整的全站鍵盤快捷鍵 (Alt+U/L/C/Z) 定位、高對比顏色視覺防護、螢幕閱讀器即時語音播報，以及行政院環境部環保標章綠色採購一鍵過濾功能，期許為全國政府機關、學校、企業採購人員及視障同仁，提供一個安全、親切且無障礙的瀏覽體驗。
+                    </p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="floating-btn-group" style="position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
+        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
+    </div>
+
+    <footer role="contentinfo" class="site-footer" id="footer-area">
+        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
+        <p style="display:inline-block; margin:0;">&copy; 2026 電子型錄展示網 (以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 草案精神為設計標準)</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof initThemeState === 'function') {
+                initThemeState();
+            }
+        });
+    </script>
+</body> 
+</html>

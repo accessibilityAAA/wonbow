@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站導覽｜萬寶屋創意實業社電子型錄</title>
+
+    <!-- SEO 最佳化設定 & WCAG 3.0 前瞻宣告 -->
+    <meta name="description" content="萬寶屋創意實業社網站導覽與無障礙控制塔，提供文具、水電材料、3C數位、本土童玩、辦公耗材、紙品收納及快捷鍵說明。本站以 WCAG 2.2 AAA 為設計標準，並參考 WCAG 3.0 APCA 色彩與認知友善精神。">
+    <meta name="keywords" content="網站導覽,萬寶屋創意實業社,文具分類地圖,無障礙網站地圖,WCAG2.2AAA,WCAG3.0,APCA對比度">
+    <meta name="author" content="萬寶屋創意實業社">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#8b0000">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- SEO 宣告標準網址 (Canonical Tag) -->
+    <link rel="canonical" href="https://www.wonbow-stationery.com/sitemap.html">
+
+    <!-- Open Graph (OG) 社群標籤 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="網站導覽｜萬寶屋創意實業社電子型錄">
+    <meta property="og:description" content="快速瀏覽萬寶屋創意實業社電子型錄、商品分類、綠色採購及網站服務。">
+    <meta property="og:image" content="images/home-banner.png">
+    <meta property="og:site_name" content="萬寶屋創意實業社">
+    <meta property="og:locale" content="zh_TW">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 檔頭 (Head) 引入順序 -->
+    <script src="js/fuse.js" defer></script>
+    <script src="js/products.js"></script>
+    <script src="js/global-search.js" defer></script>
+
+    <!-- SEO 防閃爍日夜模式極速腳本 -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <style>
+        .sitemap-page { width: 100%; }
+        .sitemap-intro { margin-bottom: 24px; }
+        .sitemap-section { margin: 28px 0; scroll-margin-top: 100px; }
+        .sitemap-section h3 { margin-bottom: 12px; }
+        
+        .accesskey-list { padding-left: 1.5rem; line-height: 1.85; }
+        .accesskey-list li { margin-bottom: 8px; }
+        .accesskey-key { font-weight: 700; display: inline-block; min-width: 75px; color: var(--primary-red); }
+        
+        .authority-note {
+            margin: 24px 0;
+            padding: 22px;
+            border-left: 6px solid var(--primary-red, #8b0000);
+            border-top: 1.5px solid var(--apca-border, #cbd5e1);
+            border-right: 1.5px solid var(--apca-border, #cbd5e1);
+            border-bottom: 1.5px solid var(--apca-border, #cbd5e1);
+            border-radius: 0 12px 12px 0;
+            background: var(--apca-bg-card, #ffffff);
+            box-shadow: var(--card-shadow);
+        }
+
+        /* WCAG 3.0 Plain Language 簡明白話文註解標籤 */
+        .plain-hint-tag {
+            font-size: 0.85rem;
+            color: #475569;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            display: inline-block;
+        }
+        body.dark-mode .plain-hint-tag {
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .toggle-sitemap-btn {
+            background: var(--light-gray);
+            border: 1.5px solid var(--border-strong);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.88rem;
+            margin-left: 8px;
+            transition: all 0.2s ease;
+        }
+        .toggle-sitemap-btn:hover {
+            background: #fef2f2;
+            color: var(--primary-red);
+        }
+
+        /* 🌟 7 大類精美網格卡片化 (Responsive Grid Layout) */
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .sitemap-card {
+            border: 1.5px solid var(--apca-border, #cbd5e1);
+            border-radius: 12px;
+            background: var(--apca-bg-card, #ffffff);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .sitemap-card:hover {
+            border-color: var(--primary-red, #8b0000);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .sitemap-card summary {
+            padding: 14px 16px;
+            font-weight: bold;
+            font-size: 0.98rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.02);
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        body.dark-mode .sitemap-card summary {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .sitemap-card summary:hover {
+            color: var(--primary-red, #8b0000);
+            background: rgba(139, 0, 0, 0.05);
+        }
+
+        .sitemap-card ul {
+            padding: 12px 16px 16px 36px;
+            margin: 0;
+            list-style: square;
+            line-height: 1.8;
+            border-top: 1px solid var(--apca-border, #cbd5e1);
+        }
+
+        .sitemap-card li {
+            margin-bottom: 4px;
+        }
+
+        .sitemap-card a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sitemap-card a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .sitemap-grid { grid-template-columns: 1fr; }
+            .authority-note { padding: 16px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="#main-content" class="skip-link">跳過導航選單，直接進入主要內容區</a>
+
+    <!-- 頂部資訊列 -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span>📞 客服電話：<a href="tel:0223456789" class="tel-link" aria-label="撥打客服電話 02 2345 6789">(02) 2345-6789 📱</a></span>
+                <span>⏰ 平日 09:00 - 18:00</span>
+                <span>💬 LINE：@shop123</span>
+            </div>
+            <div class="top-bar-right">
+                <nav aria-label="服務與政策選單">
+                    <a href="eco_friendly.html" class="service-link" style="color: #86efac; font-weight: bold;">🌱 綠色採購專區</a>
+                    <a href="anti_fraud.html" class="service-link" style="color: #ffcdd2; font-weight: bold;">🛡️ 反詐騙宣導</a>
+                    <a href="privacy.html">隱私權政策</a>
+                    <a href="sitemap.html" aria-current="page" style="font-weight: bold;">網站導覽</a>
+                    <a href="about_us.html">關於我們</a>
+                    <a href="https://greenlifestyle.moenv.gov.tw/categories/greenProductSearch" target="_blank" rel="noopener noreferrer" style="color: #86efac; font-weight: bold; border: 1px solid #86efac; padding: 2px 8px; border-radius: 12px; margin-left: 5px;">
+                        🔍 環保標章查詢網 <span aria-hidden="true">↗</span>
+                    </a>
+                    <button type="button" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 2px 10px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 8px;">🌙 切換模式</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁首 H1 標題 & Alt+U 定位區 -->
+    <header role="banner" class="site-header" id="header-area" tabindex="-1">
+        <div class="header-container">
+            <h1>
+                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁；快速鍵 Alt 加 U">
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
+                </a>
+            </h1>
+            <div class="search-box" role="search" aria-label="全站搜尋">
+                <input type="search" id="site-search" name="q" placeholder="全站搜尋，例如：黑筆、藍筆、修正帶" autocomplete="off" enterkeyhint="search" aria-label="全站搜尋關鍵字">
+                <button type="button" id="site-search-button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main id="main-content" role="main" class="main-content sitemap-page" tabindex="-1">
+
+            <!-- WCAG 3.0 即時語音播報卡 -->
+            <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+            <nav aria-label="麵包屑導航" class="breadcrumb">
+                <ol>
+                    <li>
+                        <a href="javascript:void(0)" id="accesskey-C" accesskey="C" tabindex="0" title="跳至主要內容展示區 [Alt+C]" style="text-decoration:none; color:inherit;">
+                            <span style="color:var(--primary-red); font-weight:bold; margin-right:4px;">:::</span>
+                        </a>
+                        <a href="index.html">首頁</a>
+                    </li>
+                    <li aria-current="page">網站導覽</li>
+                </ol>
+            </nav>
+
+            <div class="page-toolbar">
+                <h2>🗺️ 網站導覽與無障礙操作控制台</h2>
+            </div>
+
+            <section class="sitemap-intro" aria-labelledby="intro-title">
+                <h3 id="intro-title">💡 關於本網站導覽</h3>
+                <p>歡迎瀏覽「萬寶屋創意實業社電子型錄展示網」網站地圖。本頁全面整合本站核心服務頁面與 7 大類商品目錄，方便公務機關、學校採購人員與視障朋友快速定位所需資源。</p>
+            </section>
+
+            <section class="sitemap-section" aria-labelledby="accesskey-title">
+                <h3 id="accesskey-title">⌨️ 全站無障礙定位快速鍵 (Accesskey)</h3>
+                <p>使用 Windows 請按 <code>Alt</code>＋快速鍵；Mac 請按 <code>Control</code>＋<code>Option</code>＋快速鍵：</p>
+                <ul class="accesskey-list">
+                    <li><span class="accesskey-key">Alt + U</span>：移至頁首標題與全站極速搜尋區。</li>
+                    <li><span class="accesskey-key">Alt + L</span>：移至中央商品 7 大分類地圖區。</li>
+                    <li><span class="accesskey-key">Alt + C</span>：移至主要內容展示與簽呈核銷功能區。</li>
+                    <li><span class="accesskey-key">Alt + Z</span>：移至頁尾版權宣告與政策選單區。</li>
+                </ul>
+            </section>
+
+            <aside class="authority-note" aria-labelledby="accessibility-title">
+                <h3 id="accessibility-title" style="margin-top:0; color:var(--primary-red);">♿ 無障礙與前瞻設計理念宣告</h3>
+                <p>本網站以數位發展部無障礙網頁規範（WCAG 2.2 AAA）為設計標竿，全站採用語意化 HTML5 標籤、全鍵盤免滑鼠導航，並前瞻對接 W3C WCAG 3.0 草案之 **APCA 感知色彩對比演算（Lc 90+）** 與 **Plain Language 簡明白話文輔助**，為所有人提供零障礙體驗。</p>
+            </aside>
+
+            <section class="sitemap-section" aria-labelledby="main-pages-title">
+                <h3 id="main-pages-title">🏠 主要核心頁面與政策</h3>
+                <ul class="sitemap-list" style="line-height: 2;">
+                    <li><a href="index.html">首頁／熱門推薦商品型錄</a> <span class="plain-hint-tag">包含 0 毫秒極速搜尋與精選熱銷文具</span></li>
+                    <li><a href="category.html?cate=new">★ 新品上市專區</a> <span class="plain-hint-tag">最新到貨文具與辦公神器</span></li>
+                    <li><a href="eco_friendly.html">🌱 政府綠色採購與環保標章專區</a> <span class="plain-hint-tag">配合政府採購法第 96 條一鍵過濾</span></li>
+                    <li><a href="anti_fraud.html">🛡️ 反詐騙宣導</a> <span class="plain-hint-tag">本站絕不要求操作 ATM 或解除分期</span></li>
+                    <li><a href="privacy.html">🔒 隱私權及安全政策</a> <span class="plain-hint-tag">無資料庫、免註冊、個資 0 留存</span></li>
+                    <li><a href="about_us.html">🏢 關於我們</a> <span class="plain-hint-tag">萬寶屋創意實業社之品牌理念與特化服務</span></li>
+                </ul>
+            </section>
+
+            <!-- 🌟 7 大類極簡卡片化分類地圖 -->
+            <section class="sitemap-section" id="sitemap-categories" aria-labelledby="category-title" tabindex="-1">
+                <a href="#sitemap-categories" id="accesskey-L" accesskey="L" tabindex="-1" title="商品網站地圖區 [Alt+L]" style="position:absolute; left:-9999px;">:::</a>
+                
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 12px;">
+                    <h3 id="category-title" style="margin:0;">📂 7 大類商品分類地圖</h3>
+                    <div>
+                        <button type="button" class="toggle-sitemap-btn" onclick="toggleAllSitemapDetails(true)">➕ 全部展開</button>
+                        <button type="button" class="toggle-sitemap-btn" onclick="toggleAllSitemapDetails(false)">➖ 全部預設收折</button>
+                    </div>
+                </div>
+                <p style="margin-bottom: 16px;">點擊任意分類卡片即可前往對應的商品目錄專區：</p>
+
+                <ul class="sitemap-grid" id="sitemap-tree">
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>1. 文具與美術教具</summary>
+                            <ul>
+                                <li><a href="category.html?cate=01_00">👉 點擊查看【文具與美術教具】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>2. 水電材料與修繕五金</summary>
+                            <ul>
+                                <li><a href="category.html?cate=02_00">👉 點擊查看【水電材料與修繕五金】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>3. 3C 數位與電腦週邊</summary>
+                            <ul>
+                                <li><a href="category.html?cate=03_00">👉 點擊查看【3C 數位與電腦週邊】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>4. 事務機器與辦公耗材</summary>
+                            <ul>
+                                <li><a href="category.html?cate=04_00">👉 點擊查看【事務機器與辦公耗材】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>5. 紙品帳簿與收納用品</summary>
+                            <ul>
+                                <li><a href="category.html?cate=05_00">👉 點擊查看【紙品帳簿與收納用品】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>6. 本土童玩與懷舊民俗</summary>
+                            <ul>
+                                <li><a href="category.html?cate=06_00">👉 點擊查看【本土童玩與懷舊民俗】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    <li class="sitemap-card">
+                        <details open>
+                            <summary>7. 其他綜合商品</summary>
+                            <ul>
+                                <li><a href="category.html?cate=07_00">👉 點擊查看【其他綜合商品】全區商品</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- 懸浮回首頁按鈕 -->
+    <div class="floating-btn-group" aria-label="快速操作" style="position: fixed; bottom: 25px; right: 25px; z-index: 999;">
+        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25);">🏠</a>
+    </div>
+
+    <!-- 頁尾宣告區 -->
+    <footer class="site-footer" id="footer-area" tabindex="-1">
+        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
+        <p style="display:inline-block; margin:0;">
+            &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
+            以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準 & 政府綠色採購規範
+        </p>
+    </footer>
+
+    <!-- 一鍵控制地圖展開／收折與語音播報 JS 腳本 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof initThemeState === "function") {
+                initThemeState();
+            }
+        });
+
+        function toggleAllSitemapDetails(isOpen) {
+            const detailsList = document.querySelectorAll("#sitemap-tree details");
+            detailsList.forEach(function (detail) {
+                detail.open = isOpen;
+            });
+            if (typeof announceToSR === "function") {
+                announceToSR(isOpen ? "已展開所有 7 大類目錄" : "已收折所有 7 大類目錄");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們 - 萬寶企業文具行 電子型錄網</title>
+    
+    <!-- SEO & 無障礙宣導標籤 -->
+    <meta name="description" content="萬寶企業文具行專為政府機關、學校與企業採購打造之純淨靜態電子型錄，以 WCAG 2.2 AAA 為設計標準，並前瞻參考 WCAG 3.0 草案精神。">
+    <meta name="keywords" content="萬寶文具,綠色採購,環保標章,無障礙網頁,WCAG2.2AAA,WCAG3.0,公務採購,電子型錄">
+    <meta name="author" content="萬寶企業文具行">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#8b0000">
+    <meta name="color-scheme" content="light dark">
+
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://www.wonbow-stationery.com/about_us.html">
+
+    <!-- Open Graph (OG) 社群標籤 -->
+    <meta property="og:title" content="關於我們 - 萬寶企業文具行 電子型錄網">
+    <meta property="og:description" content="專為公務、學校與企業採購打造的純淨數位型錄，以 WCAG 2.2 AAA 無障礙規範為設計標竿。">
+    <meta property="og:image" content="images/home-banner.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="萬寶企業文具行">
+    <meta property="og:locale" content="zh_TW">
+
+    <!-- Google 結構化資料 (BreadcrumbList Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "首頁",
+        "item": "https://www.wonbow-stationery.com/index.html"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "關於我們",
+        "item": "https://www.wonbow-stationery.com/about_us.html"
+      }]
+    }
+    </script>
+
+    <!-- 主題狀態與防閃爍極速腳本 -->
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark-mode');
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* 無障礙視覺與高對比定義 */
+        :root {
+            --apca-text-main: #0f172a;       /* 高對比常規文字 */
+            --apca-bg-card: #f8fafc;        /* 護眼卡片背景 */
+            --apca-border: #cbd5e1;         /* 顯性結構分隔線 */
+            --primary-red: #8b0000;         /* 經典標題紅 */
+        }
+
+        body.dark-mode {
+            --apca-text-main: #f1f5f9;      /* 柔和白字，防眩光感官負擔 */
+            --apca-bg-card: #0f172a;        /* 護眼深藍黑 */
+            --apca-border: #334155;
+        }
+
+        /* 絕對焦點與動態防護 */
+        :focus-visible { 
+            outline: 3px solid #facc15 !important; 
+            outline-offset: 4px !important; 
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto !important; }
+            *, *::before, *::after { 
+                animation-duration: 0.01ms !important; 
+                animation-iteration-count: 1 !important; 
+                transition-duration: 0.01ms !important; 
+                scroll-behavior: auto !important; 
+            }
+        }
+
+        .concept-card {
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid var(--apca-border);
+            background: var(--apca-bg-card);
+            box-shadow: var(--card-shadow);
+            line-height: 1.85;
+            margin-bottom: 30px;
+            color: var(--apca-text-main);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            padding: 20px;
+            border-radius: 12px;
+            border: 1.5px solid var(--apca-border);
+            background: var(--bg-main);
+        }
+
+        .feature-item h4 {
+            margin-top: 0;
+            color: var(--primary-red);
+            font-size: 1.08rem;
+            margin-bottom: 8px;
+        }
+
+        /* 易讀性文字強化 (WCAG 3.0 Plain Language) */
+        .plain-text-hint {
+            font-size: 0.88rem;
+            color: #475569;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 6px;
+        }
+        body.dark-mode .plain-text-hint {
+            color: #94a3b8;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.94rem;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 14px 16px;
+            border: 1px solid var(--apca-border);
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: var(--primary-red);
+            color: #ffffff;
+            font-size: 1.02rem;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        body.dark-mode .comparison-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        body.dark-mode .feature-item {
+            background: #1e293b !important;
+            border-color: var(--apca-border) !important;
+        }
+    </style>
+
+    <script src="js/fuse.js" defer></script>
+    <script src="js/products.js"></script>
+    <script src="js/global-search.js" defer></script>
+</head>
+<body>
+
+    <!-- 快速無障礙跳躍導航 -->
+    <a href="#main-content" class="skip-link">跳過選單，直接進入主要內容區</a>
+
+    <!-- 頂部資訊列 -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="top-bar-left">
+                <span>📞 客服專線：<a href="tel:0223456789" class="tel-link" title="點擊直撥客服專線">(02) 2345-6789 📱</a></span>
+                <span>⏰ 平日 09:00 - 18:00</span>
+                <span>💬 LINE：@shop123</span>
+            </div>
+            <div class="top-bar-right">
+                <nav aria-label="服務與政策選單">
+                    <a href="eco_friendly.html" style="color: #86efac; font-weight: bold;">🌱 綠色採購專區</a>
+                    <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold;">🛡️ 反詐騙宣導</a>
+                    <a href="privacy.html">隱私權政策</a>
+                    <a href="sitemap.html">網站導覽</a>
+                    <a href="about_us.html" aria-current="page" style="font-weight: bold;">關於我們</a>
+                    <a href="https://greenlifestyle.moenv.gov.tw/categories/greenProductSearch" target="_blank" rel="noopener noreferrer" style="color: #86efac; font-weight: bold; border: 1px solid #86efac; padding: 2px 8px; border-radius: 12px; margin-left: 5px;">🔍 環保標章查詢網 🔗</a>
+                    <button type="button" id="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 2px 10px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 8px;">🌙 切換模式</button>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 頁首 H1 標題區 (Alt+U 定位點) -->
+    <header role="banner" class="site-header" id="header-area">
+        <div class="header-container">
+            <h1>
+                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]">
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶企業文具行 - 電子型錄展示網
+                </a>
+            </h1>
+            <div class="search-box">
+                <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
+                <button type="button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 快捷鍵 [Alt+L] 隱藏導向點，防範無障礙鍵盤中斷 -->
+        <a href="#main-content" id="accesskey-L" accesskey="L" tabindex="-1" title="產品分類選單區 [Alt+L]" style="position:absolute; left:-9999px;">:::</a>
+
+        <!-- 主要內容區 (Alt+C 定位點) -->
+        <main id="main-content" role="main" class="main-content" tabindex="-1" style="width: 100%;">
+            
+            <!-- 動態語意播報區 (螢幕閱讀器即時通知) -->
+            <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+            <nav aria-label="麵包屑導航" class="breadcrumb">
+                <ol>
+                    <li>
+                        <a href="javascript:void(0)" id="accesskey-C" accesskey="C" tabindex="0" title="跳至主要內容展示區 [Alt+C]" style="text-decoration:none; color:inherit;">
+                            <span style="color:var(--primary-red); font-weight:bold; margin-right:4px;">:::</span>
+                        </a>
+                        <a href="index.html" title="點擊返回首頁">首頁</a>
+                    </li>
+                    <li aria-current="page">關於我們</li>
+                </ol>
+            </nav>
+
+            <div class="page-toolbar">
+                <h2>🏢 關於我們：專為公務採購與無障礙打造的純淨型錄</h2>
+            </div>
+
+            <article class="concept-card">
+                <!-- 核心初衷宣言 -->
+                <section style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-left: 6px solid #047857; padding: 22px 26px; border-radius: 0 12px 12px 0; margin-bottom: 28px; border-top: 1px solid #a7f3d0; border-right: 1px solid #a7f3d0; border-bottom: 1px solid #a7f3d0;">
+                    <h3 style="color: #064e3b; margin: 0 0 10px 0; font-size: 1.25rem; font-weight: 900;">
+                        💡 關於本站：一個專為無障礙與公務採購打造的純淨型錄
+                    </h3>
+                    <p style="margin: 0; color: #065f46; font-size: 1rem; font-weight: 600; line-height: 1.8;">
+                        這是一個採用純 HTML 靜態架構建置的電子型錄。我們沒有複雜的購物車、會員系統或廣告元件，只希望用最純粹、最輕量的技術，為全台公務同仁、學校教師、企業採購人員以及視障朋友，提供一個零負擔、秒開且完全無障礙的瀏覽體驗。
+                    </p>
+                </section>
+
+                <h3 style="color: var(--primary-red); margin-top: 30px; font-size: 1.2rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 6px;">🌟 我們用心處理的四大細節</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <h4>📝 公務簽呈與條碼一鍵複製</h4>
+                        <p style="margin: 0; font-size: 0.93rem;">
+                            理解採購人員手動開單的痛苦，我們提供一鍵複製功能，自動打包品名、規格、13 位 EAN 國際條碼、環保證號及廠商資訊，方便快速完成核銷。
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>♿ 友善視障與螢幕閱讀器</h4>
+                        <p style="margin: 0; font-size: 0.93rem;">
+                            以數位發展部 WCAG 2.2 AAA 無障礙規範為設計標竿。支援全鍵盤快捷鍵操作（Alt+U/L/C/Z）、高對比護眼模式與螢幕閱讀器語音即時播報。
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>🎨 提前融入未來無障礙規範 (WCAG 3.0)</h4>
+                        <p style="margin: 0; font-size: 0.93rem;">
+                            除了現行標準，我們也參考 W3C WCAG 3.0 草案精神，採用保護眼睛的 APCA 感知視覺色差與簡明文字註解（Plain Language），照顧高齡與閱讀障礙者的需求。
+                            <span class="plain-text-hint">白話說明：畫面簡單不刺眼，鍵盤按鍵很清晰，大家都好用。</span>
+                        </p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h4>⚡ 純 HTML 靜態極速與資安防護</h4>
+                        <p style="margin: 0; font-size: 0.93rem;">
+                            不使用資料庫，資料絕不上傳伺服器。0 毫秒極速搜尋，無資料庫被駭或個資外洩的風險，安心又穩定。
+                        </p>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--primary-red); margin-top: 35px; font-size: 1.2rem; border-bottom: 2px solid var(--primary-red); padding-bottom: 6px;">📊 本站特色與傳統網站簡單對比</h3>
+
+                <div style="overflow-x: auto;">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>特色維度</th>
+                                <th>傳統商業電商網站</th>
+                                <th>萬寶純淨型錄網</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>無障礙支援</strong></td>
+                                <td>常因蓋版廣告或複雜元件難以使用鍵盤操作</td>
+                                <td><strong style="color:#047857;">以 WCAG 2.2 AAA 為標準，並前瞻參考 WCAG 3.0 草案</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>公務採購報帳</strong></td>
+                                <td>僅提供一般購物車與出貨單</td>
+                                <td><strong style="color:#047857;">提供公務簽呈文案與國際條碼一鍵複製</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>瀏覽體驗</strong></td>
+                                <td>彈窗多、載入較慢，容易干擾注意力</td>
+                                <td><strong style="color:#047857;">0 廣告干擾、純文字簡明說明、0 毫秒秒開</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>資安與隱私</strong></td>
+                                <td>需註冊會員、輸入敏感個人與金流資料</td>
+                                <td><strong style="color:#047857;">無資料庫、免註冊，100% 保障瀏覽隱私</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <!-- 懸浮返回首頁按鈕 -->
+    <div class="floating-btn-group" style="position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
+        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
+    </div>
+
+    <!-- 頁尾宣告區 (Alt+Z 定位點) -->
+    <footer class="site-footer" id="footer-area" role="contentinfo">
+        <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
+        <p style="display:inline-block; margin:0; color: #f1f5f9;">
+            &copy; 2026 萬寶企業文具行電子型錄展示網 ｜ 
+            以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準 & 政府綠色採購規範 ｜ 
+            <a href="about_us.html" style="color: #ffeb3b; text-decoration: underline; font-weight: bold;">關於我們 (About Us)</a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof initThemeState === 'function') {
+                initThemeState();
+            }
+        });
+    </script>
+</body>
+</html>
