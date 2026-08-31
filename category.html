@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">商品分類 - 萬寶企業文具行 電子型錄網</title>
+    <title id="page-title">商品分類 - 萬寶屋創意實業社 電子型錄網</title>
     
     <!-- SEO 最佳化設定 & WCAG 3.0 前瞻宣告 -->
     <meta name="description" content="提供政府機關、學校與企業採購文具、影印紙、筆類、修正用品及環保標章商品線上型錄。以 WCAG 2.2 AAA 為設計標準，並前瞻參考 WCAG 3.0 APCA 感知視覺演算精神。">
     <meta name="keywords" content="文具分類,辦公用品,影印紙,鋼筆,中性筆,修正帶,綠色採購,環保標章,WCAG3.0">
-    <meta name="author" content="萬寶企業文具行">
+    <meta name="author" content="萬寶屋創意實業社">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#8b0000">
     <meta name="color-scheme" content="light dark">
@@ -17,11 +17,11 @@
     <link rel="canonical" href="https://www.wonbow-stationery.com/category.html">
 
     <!-- Open Graph (OG) 社群分享標籤 -->
-    <meta property="og:title" content="商品分類 - 萬寶企業文具行 電子型錄網">
+    <meta property="og:title" content="商品分類 - 萬寶屋創意實業社 電子型錄網">
     <meta property="og:description" content="提供政府綠色採購、文具用品、辦公事務用品線上電子型錄展示">
     <meta property="og:image" content="images/home-banner.png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="萬寶企業文具行電子型錄">
+    <meta property="og:site_name" content="萬寶屋創意實業社電子型錄">
     <meta property="og:locale" content="zh_TW">
 
     <!-- Google 結構化資料 (BreadcrumbList Schema) -->
@@ -145,8 +145,8 @@
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]" aria-label="萬寶企業文具行電子型錄首頁">
-                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶企業文具行 - 電子型錄展示網
+                <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]" aria-label="萬寶屋創意實業社電子型錄首頁">
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
                 </a>
                 <button type="button" class="mobile-theme-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
             </div>
@@ -228,34 +228,39 @@
                         </select>
                     </div>
 
-                    <div id="pagination-nav-top" class="pagination-compact"></div>
+                    <!-- 無障礙修復：導航非空預設占位 -->
+                    <nav id="pagination-nav-top" class="pagination-compact" aria-label="頂部分頁導航">
+                        <span class="sr-only">頁面分頁載入中</span>
+                    </nav>
                 </div>
             </div>
 
             <!-- 動態商品宮格展示區 -->
             <section class="product-grid grid-5col" id="product-list" aria-label="商品宮格列表" tabindex="-1"></section>
 
-            <!-- 底部分頁區 -->
+            <!-- 底部分頁區 (無障礙修復：預設非空) -->
             <div class="pagination-bottom-wrapper">
-                <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航"></nav>
+                <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航">
+                    <span class="sr-only">頁面分頁載入中</span>
+                </nav>
             </div>
         </main>
     </div>
 
-    <!-- 商品詳情 Modal 彈窗 -->
+    <!-- 商品詳情 Modal 彈窗 (無障礙修復：預覽圖預設 alt 非空) -->
     <dialog id="product-detail-modal" class="product-modal" aria-labelledby="modal-title" aria-modal="true">
         <div class="modal-header-bar">
             <h3 id="modal-title">商品詳細資訊</h3>
             <button type="button" class="btn-close-icon" onclick="closeModal()" aria-label="關閉視窗 (Esc)">✕</button>
         </div>
-        <img id="modal-img" src="" alt="商品預覽圖" class="modal-img" loading="lazy">
+        <img id="modal-img" src="" alt="商品詳細照片預覽" class="modal-img" loading="lazy">
         <dl class="spec-list">
             <dt>品牌/型號：</dt><dd id="modal-brand-model">未標示</dd>
             <dt>建議售價：</dt><dd id="modal-price">價錢：特價中</dd>
             <dt>規格說明：</dt><dd id="modal-spec">無</dd>
             <dt>國際條碼：</dt><dd id="modal-code">未提供</dd>
             <dt>產地/證明：</dt><dd id="modal-origin">未標記</dd>
-            <dt>來源供應商：</dt><dd id="modal-supplier">萬寶企業文具行</dd>
+            <dt>來源供應商：</dt><dd id="modal-supplier">萬寶屋創意實業社</dd>
             <dt>公務與標章：</dt><dd id="modal-badges" style="font-weight: bold;">一般合格商品</dd>
             <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;">(02) 2345-6789 📱 (點擊撥號)</a></dd>
         </dl>
@@ -272,7 +277,7 @@
     <footer role="contentinfo" class="site-footer" id="footer-area">
         <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶企業文具行電子型錄展示網 ｜ 
+            &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
             <a href="about_us.html">關於我們 (About Us)</a>
         </p>
     </footer>
@@ -323,7 +328,7 @@
             
             if (urlParams.has('search')) {
                 const searchQuery = urlParams.get('search').trim();
-                document.title = `「${searchQuery}」搜尋結果 - 萬寶企業文具行`;
+                document.title = `「${searchQuery}」搜尋結果 - 萬寶屋創意實業社`;
 
                 const parentLi = document.getElementById('breadcrumb-parent-li');
                 if (parentLi) parentLi.hidden = true;
@@ -359,7 +364,7 @@
 
             const cateMapData = (typeof CATE_MAP !== 'undefined') ? CATE_MAP : {};
             const cateName = cateMapData[currentCate] || (MAIN_CATE_MAP[currentCate.split('_')[0]] ? MAIN_CATE_MAP[currentCate.split('_')[0]].name : "分類商品");
-            document.title = `${cateName} - 萬寶企業文具行`;
+            document.title = `${cateName} - 萬寶屋創意實業社`;
 
             const parentLi = document.getElementById('breadcrumb-parent-li');
             const parentLink = document.getElementById('breadcrumb-parent-link');
@@ -530,7 +535,7 @@
             document.getElementById('modal-code').innerText = p.code || "未提供";
             document.getElementById('modal-spec').innerText = p.spec || "原廠標準規格";
             document.getElementById('modal-origin').innerText = `${p.origin || '未標示'}${p.originProof ? ' (' + p.originProof + ')' : ''}`;
-            document.getElementById('modal-supplier').innerText = p.supplier || "萬寶企業文具行";
+            document.getElementById('modal-supplier').innerText = p.supplier || "萬寶屋創意實業社";
             document.getElementById('modal-desc').innerText = p.desc || "此商品符合國際標準規範。";
 
             const modalImg = document.getElementById('modal-img');
@@ -566,7 +571,7 @@
         function copyGovFormat() {
             if (!currentActiveProduct) return;
             const p = currentActiveProduct;
-            const text = `【公務採購商品】${p.title}\n【品牌/型號】${p.brand || '通用'} / ${p.model || '未標示'}\n【國際條碼】${p.code || '未提供'}\n【規格說明】${p.spec || '標準規格'}\n【廠商名稱】萬寶企業文具行\n【訂購電話】(02) 2345-6789`;
+            const text = `【公務採購商品】${p.title}\n【品牌/型號】${p.brand || '通用'} / ${p.model || '未標示'}\n【國際條碼】${p.code || '未提供'}\n【規格說明】${p.spec || '標準規格'}\n【廠商名稱】萬寶屋創意實業社\n【訂購電話】(02) 2345-6789`;
             navigator.clipboard.writeText(text).then(() => { alert("已成功複製公務簽呈格式！"); });
         }
     </script>

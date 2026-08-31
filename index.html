@@ -48,7 +48,6 @@
     </script>
 
     <style>
-        /* WCAG 3.0 APCA 感知對比與樣式變數升級 (全面採用相對單位 rem / em) */
         :root {
             --apca-text-main: #0f172a;       /* Lc 90+ 高對比文字 */
             --apca-bg-card: #f8fafc;        /* 高護眼卡片背景 */
@@ -184,7 +183,7 @@
         </div>
     </div>
 
-    <!-- 🌟 頁首 H1 標題 & 搜尋框並排區 (Alt+U 定位區) -->
+    <!-- 頁首 H1 標題 & 搜尋框並排區 (Alt+U 定位區) -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between;">
@@ -200,9 +199,9 @@
         </div>
     </header>
 
-    <!-- 🌟 首頁全寬滿版 Banner 區塊 -->
+    <!-- 🌟 首頁 Banner (無障礙修復：明確說明 Banner 內容) -->
     <div id="home-banner-block" class="home-banner-wrapper">
-        <img src="images/home-banner.png" alt="萬寶屋創意實業社 - 政府機關與學校首選：誠信經營、高效配送、齊全品項" loading="eager">
+        <img src="images/home-banner.png" alt="萬寶屋創意實業社形象橫幅：提供一站式專業辦公與公務採購，誠信經營、高效配送、開立完整簽呈核銷憑證" loading="eager">
     </div>
 
     <div class="container">
@@ -210,7 +209,7 @@
         <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
         <div class="menu-backdrop" id="menu-backdrop" onclick="toggleMobileMenu()"></div>
 
-        <!-- 🌟 左側選單：精簡 7 大主分類選單 -->
+        <!-- 左側選單 -->
         <nav role="navigation" class="sidebar-nav" id="sidebar-nav" aria-label="產品分類樹狀選單">
             <h2>
                 <a href="#sidebar-nav" id="accesskey-L" accesskey="L" tabindex="0" title="跳至左側產品分類選單區 [Alt+L]" style="color:#fff; text-decoration:none; display:inline-block;">
@@ -233,7 +232,7 @@
             </ul>
         </nav>
 
-        <!-- 中央內容區 (Alt+C 快捷鍵區域) -->
+        <!-- 中央內容區 -->
         <main id="main-content" role="main" class="main-content" tabindex="-1">
             
             <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
@@ -277,7 +276,10 @@
                         </select>
                     </div>
 
-                    <div id="pagination-nav-top" class="pagination-compact"></div>
+                    <!-- 無障礙修復：導航非空預設占位 -->
+                    <nav id="pagination-nav-top" class="pagination-compact" aria-label="頂部分頁導航">
+                        <span class="sr-only">頁面分頁載入中</span>
+                    </nav>
                 </div>
             </div>
 
@@ -296,12 +298,14 @@
                 </section>
             </noscript>
 
-            <!-- 動態商品宮格/條列展示區 -->
+            <!-- 動態商品宮格展示區 -->
             <section class="product-grid grid-5col" id="product-list" aria-label="商品宮格列表" tabindex="-1"></section>
 
-            <!-- 底部分頁區 -->
+            <!-- 底部分頁區 (無障礙修復：預設非空) -->
             <div class="pagination-bottom-wrapper">
-                <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航"></nav>
+                <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航">
+                    <span class="sr-only">頁面分頁載入中</span>
+                </nav>
             </div>
 
             <!-- SEO FAQ 區塊 -->
@@ -318,13 +322,13 @@
         </main>
     </div>
 
-    <!-- 商品詳情 Modal 彈窗 -->
+    <!-- 商品詳情 Modal 彈窗 (無障礙修復：預覽圖預設 alt 非空) -->
     <dialog id="product-detail-modal" class="product-modal" aria-labelledby="modal-title" aria-modal="true">
         <div class="modal-header-bar">
             <h3 id="modal-title">商品詳細資訊</h3>
             <button type="button" class="btn-close-icon" onclick="closeModal()" aria-label="關閉視窗 (Esc)">✕</button>
         </div>
-        <img id="modal-img" src="" alt="商品預覽圖" class="modal-img" loading="lazy">
+        <img id="modal-img" src="" alt="商品詳細照片預覽" class="modal-img" loading="lazy">
         <dl class="spec-list">
             <dt>品牌/型號：</dt><dd id="modal-brand-model">未標示</dd>
             <dt>建議售價：</dt><dd id="modal-price">洽詢</dd>
@@ -363,7 +367,7 @@
         </p>
     </footer>
 
-    <!-- 🌟 首頁專屬邏輯腳本與補丁機制 -->
+    <!-- 首頁動態邏輯 -->
     <script>
         function toggleTheme() {
             const isDark = document.documentElement.classList.toggle('dark-mode');
