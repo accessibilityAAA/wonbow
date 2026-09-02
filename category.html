@@ -53,6 +53,8 @@
         }
     </script>
 
+    <link rel="stylesheet" href="style.css">
+    
     <style>
         :root {
             --apca-text-main: #0f172a;
@@ -67,13 +69,18 @@
             --apca-border: #334155;
         }
 
-        *, *::before, *::after { box-sizing: border-box; }
-        body { overflow-x: hidden; margin: 0; padding: 0; color: var(--apca-text-main); }
         :focus-visible { outline: 3px solid #facc15 !important; outline-offset: 4px !important; }
 
+        /* 🌟 修復對齊問題：修正 .top-bar-container 寬度與首頁（80rem）100% 一致 */
         .top-bar-container {
-            display: flex; justify-content: space-between; align-items: center;
-            max-width: 1200px; margin: 0 auto; padding: 0 15px; flex-wrap: wrap;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            max-width: 80rem !important;
+            margin: 0 auto !important;
+            padding: 0 0.9375rem !important;
+            flex-wrap: wrap !important;
+            width: 100% !important;
         }
 
         .breadcrumb ol {
@@ -99,17 +106,7 @@
         .badge-eco { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
         .badge-taiwan { background: #e0f2fe; color: #0369a1; border: 1px solid #7dd3fc; }
         .badge-nonchina { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
-
-        .mobile-theme-btn { display: none; }
-        @media (max-width: 768px) {
-            .mobile-theme-btn {
-                display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.2);
-                color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.4); padding: 4px 10px;
-                border-radius: 20px; font-size: 0.82rem; font-weight: bold; cursor: pointer;
-            }
-        }
     </style>
-    <link rel="stylesheet" href="style.css">
     <script src="js/fuse.js" defer></script>
     <script src="js/search-index.js" defer></script>
     <script src="js/products.js"></script>
@@ -119,7 +116,7 @@
 
     <a href="#main-content" class="skip-link">跳過導航選單，直接進入主要內容區</a>
 
-    <!-- 頂部資訊列 (桌機版可見) -->
+    <!-- 頂部資訊列 -->
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="top-bar-left">
@@ -129,11 +126,7 @@
             </div>
             <div class="top-bar-right">
                 <nav aria-label="服務與政策選單">
-                    <a href="eco_friendly.html" style="color: #86efac; font-weight: bold;">🌱 綠色採購專區</a>
-                    <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold;">🛡️ 反詐騙宣導</a>
-                    <a href="privacy.html">隱私權政策</a>
-                    <a href="sitemap.html">網站導覽</a>
-                    <a href="about_us.html">關於我們</a>
+                    <a href="category.html?eco=true" style="color: #86efac; font-weight: bold; background: rgba(22,163,74,0.3); padding: 0.2rem 0.625rem; border-radius: 0.75rem; border: 0.0625rem solid #86efac;">🌱 全站環保標章專區</a>
                     <a href="https://greenlifestyle.moenv.gov.tw/categories/greenProductSearch" target="_blank" rel="noopener noreferrer" style="color: #86efac; font-weight: bold; border: 1px solid #86efac; padding: 2px 8px; border-radius: 12px; margin-left: 5px;">🔍 環保標章查詢網 🔗</a>
                     <button type="button" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式" style="background: rgba(255,255,255,0.15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 2px 10px; border-radius: 12px; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 8px;">🌙 切換模式</button>
                 </nav>
@@ -141,14 +134,13 @@
         </div>
     </div>
 
-    <!-- 頁首 H1 標題 & Alt+U 定位區 -->
+    <!-- 頁首 H1 標題 & 搜尋框 -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                 <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]" aria-label="萬寶屋創意實業社電子型錄首頁">
                     <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
                 </a>
-                <button type="button" class="mobile-theme-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
             </div>
             <div class="search-box">
                 <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
@@ -158,8 +150,11 @@
     </header>
 
     <div class="container">
-        <!-- RWD 手機版漢堡按鈕與遮罩 -->
-        <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
+        <!-- RWD 手機版漢堡按鈕、夜間模式按鈕與遮罩 -->
+        <div style="display: flex; gap: 8px; width: 100%;">
+            <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
+            <button type="button" class="theme-toggle-btn mobile-theme-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
+        </div>
         <div class="menu-backdrop" id="menu-backdrop" onclick="toggleMobileMenu()"></div>
 
         <!-- 左側選單 -->
@@ -172,6 +167,7 @@
             </h2>
             <ul class="nav-tree">
                 <li><a href="index.html" style="display:flex; align-items:center; min-height:44px; padding:8px 14px; font-weight:bold; text-decoration:none;">🏠 首頁 / 推薦商品</a></li>
+                <li><a href="category.html?eco=true" id="link-eco" style="color:#15803d; font-weight:bold;">🌱 全站環保標章專區</a></li>
                 <li><a href="category.html?cate=new" id="link-new">★ 新品上市</a></li>
 
                 <li><a href="category.html?cate=01_00" id="link-01_00">1. 文具與美術教具</a></li>
@@ -228,7 +224,6 @@
                         </select>
                     </div>
 
-                    <!-- 無障礙修復：導航非空預設占位 -->
                     <nav id="pagination-nav-top" class="pagination-compact" aria-label="頂部分頁導航">
                         <span class="sr-only">頁面分頁載入中</span>
                     </nav>
@@ -238,7 +233,7 @@
             <!-- 動態商品宮格展示區 -->
             <section class="product-grid grid-5col" id="product-list" aria-label="商品宮格列表" tabindex="-1"></section>
 
-            <!-- 底部分頁區 (無障礙修復：預設非空) -->
+            <!-- 底部分頁區 -->
             <div class="pagination-bottom-wrapper">
                 <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航">
                     <span class="sr-only">頁面分頁載入中</span>
@@ -247,7 +242,7 @@
         </main>
     </div>
 
-    <!-- 商品詳情 Modal 彈窗 (無障礙修復：預覽圖預設 alt 非空) -->
+    <!-- 商品詳情 Modal 彈窗 -->
     <dialog id="product-detail-modal" class="product-modal" aria-labelledby="modal-title" aria-modal="true">
         <div class="modal-header-bar">
             <h3 id="modal-title">商品詳細資訊</h3>
@@ -274,11 +269,22 @@
         <button type="button" class="btn-close" onclick="closeModal()" style="margin-top: 15px;">關閉視窗 (Esc)</button>
     </dialog>
 
+    <!-- 右下角懸浮按鈕 -->
+    <div class="floating-btn-group" style="position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
+        <a href="index.html" class="float-home-btn" title="返回首頁" aria-label="返回首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
+    </div>
+
+    <!-- 頁尾宣告區 -->
     <footer role="contentinfo" class="site-footer" id="footer-area">
         <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區 [Alt+Z]" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</a>
+        <div style="margin-bottom: 10px; font-size: 0.92rem;">
+            <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold; margin: 0 8px;">🛡️ 反詐騙宣導</a> ｜ 
+            <a href="privacy.html" style="margin: 0 8px;">隱私權政策</a> ｜ 
+            <a href="sitemap.html" style="margin: 0 8px;">網站導覽</a> ｜ 
+            <a href="about_us.html" style="margin: 0 8px;">關於我們 (About Us)</a>
+        </div>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
-            <a href="about_us.html">關於我們 (About Us)</a>
+            &copy; 2026 萬寶屋創意實業社電子型錄展示網
         </p>
     </footer>
 
@@ -286,8 +292,7 @@
         function toggleTheme() {
             const isDark = document.documentElement.classList.toggle('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            const btns = document.querySelectorAll('.theme-toggle-btn');
-            btns.forEach(btn => {
+            document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
                 btn.innerText = isDark ? '☀️ 淺色' : '🌙 模式';
             });
         }
@@ -302,7 +307,7 @@
             "07": { name: "7. 其他綜合商品", code: "07_00" }
         };
 
-        const FALLBACK_SVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' font-size='15' fill='%2364748b' dominant-baseline='middle' text-anchor='middle'>🖼️ 圖片建置中</text></svg>";
+        const FALLBACK_SVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><rect width='100%' height='100%' fill='%23f8fafc'/><rect x='10' y='10' width='280' height='280' rx='16' fill='%23ffffff' stroke='%23cbd5e1' stroke-width='2'/><circle cx='150' cy='120' r='40' fill='%23f1f5f9'/><path d='M135 125 L150 100 L165 125 Z' fill='%238b0000'/><text x='50%' y='190' font-size='15' font-weight='900' fill='%238b0000' font-family='sans-serif' text-anchor='middle'>萬寶屋創意實業社</text><text x='50%' y='215' font-size='12' font-weight='700' fill='%2364748b' font-family='sans-serif' text-anchor='middle'>📦 原廠正品 ‧ 品質保證</text></svg>";
 
         let currentCategoryItems = [];
         let currentCate = "01_00";
@@ -318,14 +323,34 @@
             return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         }
 
+        function resetFilters() {
+            isEcoOnly = false;
+            isTaiwanOnly = false;
+            currentPriceRange = 'all';
+            currentSort = 'default';
+            currentPage = 1;
+
+            const ecoBox = document.getElementById('eco-only-checkbox');
+            const taiwanBox = document.getElementById('taiwan-only-checkbox');
+            const priceSelect = document.getElementById('price-range-select');
+            const sortSelect = document.getElementById('sort-select');
+
+            if (ecoBox) ecoBox.checked = false;
+            if (taiwanBox) taiwanBox.checked = false;
+            if (priceSelect) priceSelect.value = 'all';
+            if (sortSelect) sortSelect.value = 'default';
+
+            renderPage();
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
 
-            const isDark = document.documentElement.classList.contains('dark-mode');
-            document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-                btn.innerText = isDark ? '☀️ 淺色' : '🌙 模式';
-            });
-            
+            if (urlParams.get('eco') === 'true') {
+                filterGlobalEco();
+                return;
+            }
+
             if (urlParams.has('search')) {
                 const searchQuery = urlParams.get('search').trim();
                 document.title = `「${searchQuery}」搜尋結果 - 萬寶屋創意實業社`;
@@ -385,6 +410,7 @@
             const cateTitleEl = document.getElementById('cate-title-display');
             if (cateTitleEl) cateTitleEl.innerText = cateName;
 
+            document.querySelectorAll(".sidebar-nav a").forEach(l => l.classList.remove('active'));
             const activeLink = document.getElementById(`link-${currentCate}`);
             if (activeLink) { activeLink.classList.add('active'); }
 
@@ -408,6 +434,35 @@
             }
             renderPage();
         });
+
+        function filterGlobalEco() {
+            const sourceProducts = (typeof PUBLISHED_PRODUCTS !== 'undefined' && PUBLISHED_PRODUCTS.length > 0) ? PUBLISHED_PRODUCTS : (typeof ALL_PRODUCTS !== 'undefined' ? ALL_PRODUCTS : []);
+            currentCategoryItems = sourceProducts.filter(p => p.isEco);
+            
+            const cateTitleEl = document.getElementById('cate-title-display');
+            if (cateTitleEl) {
+                cateTitleEl.innerHTML = `🌱 全站綠色採購與環保標章專區 <span style="font-size:0.9rem; color:#666; font-weight:normal;">（共 ${currentCategoryItems.length} 項認證商品）</span>`;
+            }
+            
+            document.title = `🌱 全站環保標章專區 - 萬寶屋創意實業社`;
+            document.querySelectorAll(".sidebar-nav a").forEach(l => l.classList.remove('active'));
+            document.getElementById('link-eco')?.classList.add('active');
+
+            const ecoCheckbox = document.getElementById('eco-only-checkbox');
+            if (ecoCheckbox) ecoCheckbox.checked = true;
+            isEcoOnly = true;
+            currentPage = 1;
+            renderPage();
+        }
+
+        function toggleMobileMenu(forceState) {
+            const nav = document.getElementById('sidebar-nav');
+            const backdrop = document.getElementById('menu-backdrop');
+            if (!nav || !backdrop) return;
+            const shouldOpen = typeof forceState === 'boolean' ? forceState : !nav.classList.contains('active');
+            nav.classList.toggle('active', shouldOpen);
+            backdrop.classList.toggle('active', shouldOpen);
+        }
 
         function toggleEcoOnly(checked) { isEcoOnly = checked; currentPage = 1; renderPage(); }
         function toggleTaiwanOnly(checked) { isTaiwanOnly = checked; currentPage = 1; renderPage(); }
@@ -436,7 +491,12 @@
             }
 
             if (items.length === 0) {
-                grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 40px; font-weight: bold; color: #64748b;">📦 該分類下商品正積極盤點上架中，敬請期待！</div>`;
+                grid.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px 20px; background: var(--apca-bg-card); border: 2px dashed var(--apca-border); border-radius: 12px; margin: 20px 0;">
+                        <p style="font-size: 1.1rem; font-weight: bold; color: #64748b; margin-bottom: 12px;">📦 該篩選條件下查無商品，請嘗試切換條件！</p>
+                        <button type="button" onclick="resetFilters()" style="background: var(--primary-gradient); color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; min-height: 44px;">🔄 一鍵重置所有篩選條件</button>
+                    </div>
+                `;
                 renderPagination(0);
                 return;
             }
@@ -457,7 +517,7 @@
                 card.innerHTML = `
                     <div style="margin-bottom: 4px;">${badgeTagsHtml}</div>
                     <div class="img-box">
-                        <img src="${imgSrc}" alt="${p.title}" class="product-img" loading="lazy">
+                        <img src="${imgSrc}" alt="${p.title} 商品照片" class="product-img" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>${p.title}</h3>
@@ -486,35 +546,56 @@
             if (!navBottom) return;
 
             if (totalItems === 0) {
-                navBottom.innerHTML = `<span>共 0 筆結果</span>`;
                 if (navTop) navTop.innerHTML = `<span>共 0 筆結果</span>`;
+                navBottom.innerHTML = `<span>共 0 筆結果</span>`;
                 return;
             }
 
             let totalPages = Math.ceil(totalItems / pageSize);
-            let html = `<span>共 <strong style="color:var(--primary-red);">${totalItems}</strong> 筆</span>`;
+            let html = `<span style="margin-right:8px;">共 <strong style="color:var(--primary-red);">${totalItems}</strong> 筆</span>`;
+
             if (currentPage > 1) {
-                html += `<a href="#page-${currentPage - 1}" onclick="goToPage(${currentPage - 1}); return false;">‹ 上一頁</a>`;
+                html += `<a href="#page-${currentPage - 1}" onclick="goToPage(${currentPage - 1}); return false;" aria-label="上一頁">‹ 上一頁</a>`;
             } else {
                 html += `<span class="disabled">‹ 上一頁</span>`;
             }
 
+            let pages = [];
+            const delta = 2;
+
             for (let i = 1; i <= totalPages; i++) {
-                if (i === currentPage) {
-                    html += `<span class="page-num active">${i}</span>`;
-                } else {
-                    html += `<a href="#page-${i}" onclick="goToPage(${i}); return false;" class="page-num">${i}</a>`;
+                if (i === 1 || i === totalPages || (i >= currentPage - delta && i <= currentPage + delta)) {
+                    pages.push(i);
                 }
             }
 
+            let l = null;
+            for (let i of pages) {
+                if (l) {
+                    if (i - l === 2) {
+                        let pageNum = l + 1;
+                        html += `<a href="#page-${pageNum}" onclick="goToPage(${pageNum}); return false;" class="page-num">${pageNum}</a>`;
+                    } else if (i - l > 2) {
+                        html += `<span class="disabled" style="border:none; background:transparent; padding:0 4px;">...</span>`;
+                    }
+                }
+                
+                if (i === currentPage) {
+                    html += `<span class="page-num active" aria-current="page">${i}</span>`;
+                } else {
+                    html += `<a href="#page-${i}" onclick="goToPage(${i}); return false;" class="page-num">${i}</a>`;
+                }
+                l = i;
+            }
+
             if (currentPage < totalPages) {
-                html += `<a href="#page-${currentPage + 1}" onclick="goToPage(${currentPage + 1}); return false;">下一頁 ›</a>`;
+                html += `<a href="#page-${currentPage + 1}" onclick="goToPage(${currentPage + 1}); return false;" aria-label="下一頁">下一頁 ›</a>`;
             } else {
                 html += `<span class="disabled">下一頁 ›</span>`;
             }
 
-            navBottom.innerHTML = html;
             if (navTop) navTop.innerHTML = html;
+            navBottom.innerHTML = html;
         }
 
         function goToPage(page) {

@@ -47,110 +47,6 @@
         }
     </script>
 
-    <style>
-        :root {
-            --apca-text-main: #0f172a;       /* Lc 90+ 高對比文字 */
-            --apca-bg-card: #f8fafc;        /* 高護眼卡片背景 */
-            --apca-border: #cbd5e1;         /* 顯性結構分隔線 */
-            --primary-red: #8b0000;
-        }
-
-        body.dark-mode {
-            --apca-text-main: #f1f5f9;      /* 防眩光柔白文字 */
-            --apca-bg-card: #0f172a;
-            --apca-border: #334155;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-            color: var(--apca-text-main);
-            font-size: 1rem;
-        }
-
-        /* 絕對清晰焦點 (WCAG 3.0 視覺感官導航) */
-        :focus-visible { 
-            outline: 0.1875rem solid #facc15 !important; 
-            outline-offset: 0.25rem !important; 
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto !important; }
-            *, *::before, *::after { 
-                animation-duration: 0.01ms !important; 
-                animation-iteration-count: 1 !important; 
-                transition-duration: 0.01ms !important; 
-                scroll-behavior: auto !important; 
-            }
-        }
-
-        .top-bar-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 80rem;
-            margin: 0 auto;
-            padding: 0 0.9375rem;
-            flex-wrap: wrap;
-        }
-
-        .breadcrumb ol {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            list-style: none;
-            padding: 0;
-            margin: 0.375rem 0;
-            gap: 0.375rem;
-        }
-
-        .breadcrumb li {
-            display: flex;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .breadcrumb li+li::before {
-            content: "/";
-            margin-right: 0.375rem;
-            color: #94a3b8;
-        }
-
-        .sidebar-nav h2 {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            padding: 0.75rem 0.9375rem;
-            margin: 0;
-            font-size: 1.1rem;
-        }
-
-        .site-footer p { color: #f1f5f9 !important; }
-        .site-footer a { color: #ffeb3b !important; text-decoration: underline; font-weight: bold; }
-        .site-footer a:hover { color: #ffffff !important; }
-
-        .badge-tag {
-            display: inline-block; font-size: 0.72rem; font-weight: 800;
-            padding: 0.125rem 0.375rem; border-radius: 0.25rem; margin-right: 0.25rem; margin-bottom: 0.25rem;
-        }
-        .badge-eco { background: #dcfce7; color: #166534; border: 0.0625rem solid #86efac; }
-        .badge-taiwan { background: #e0f2fe; color: #0369a1; border: 0.0625rem solid #7dd3fc; }
-        .badge-nonchina { background: #fef3c7; color: #92400e; border: 0.0625rem solid #fde68a; }
-
-        .mobile-theme-btn { display: none; }
-        @media (max-width: 768px) {
-            .mobile-theme-btn {
-                display: inline-flex; align-items: center; background: rgba(255, 255, 255, 0.2);
-                color: #ffffff; border: 0.0625rem solid rgba(255, 255, 255, 0.4); padding: 0.25rem 0.625rem;
-                border-radius: 1.25rem; font-size: 0.82rem; font-weight: bold; cursor: pointer;
-            }
-        }
-    </style>
     <link rel="stylesheet" href="style.css">
     <script src="js/fuse.js" defer></script>
     <script src="js/search-index.js" defer></script>
@@ -161,7 +57,7 @@
 
     <a href="#main-content" class="skip-link">跳過導航選單，直接進入主要內容區</a>
 
-    <!-- 頂部資訊列 (桌機版可見) -->
+    <!-- 頂部資訊列 -->
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="top-bar-left">
@@ -171,11 +67,7 @@
             </div>
             <div class="top-bar-right">
                 <nav aria-label="服務與政策選單">
-                    <a href="javascript:void(0)" onclick="filterGlobalEco()" style="color: #86efac; font-weight: bold; background: rgba(22,163,74,0.3); padding: 0.2rem 0.625rem; border-radius: 0.75rem; border: 0.0625rem solid #86efac;">🌱 全站環保標章專區</a>
-                    <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold;">🛡️ 反詐騙宣導</a>
-                    <a href="privacy.html">隱私權政策</a>
-                    <a href="sitemap.html">網站導覽</a>
-                    <a href="about_us.html">關於我們</a>
+                    <a href="category.html?eco=true" style="color: #86efac; font-weight: bold; background: rgba(22,163,74,0.3); padding: 0.2rem 0.625rem; border-radius: 0.75rem; border: 0.0625rem solid #86efac;">🌱 全站環保標章專區</a>
                     <a href="https://greenlifestyle.moenv.gov.tw/categories/greenProductSearch" target="_blank" rel="noopener noreferrer" style="color: #86efac; font-weight: bold; border: 0.0625rem solid #86efac; padding: 0.125rem 0.5rem; border-radius: 0.75rem; margin-left: 0.3125rem;">🔍 環保標章查詢網 🔗</a>
                     <button type="button" class="theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式" style="background: rgba(255,255,255,0.15); color: #fff; border: 0.0625rem solid rgba(255,255,255,0.3); padding: 0.125rem 0.625rem; border-radius: 0.75rem; cursor: pointer; font-size: 0.85rem; font-weight: bold; margin-left: 0.5rem;">🌙 切換模式</button>
                 </nav>
@@ -183,14 +75,13 @@
         </div>
     </div>
 
-    <!-- 🌟 頁首 H1 標題 & 搜尋框並排區 (Alt+U 定位區) -->
+    <!-- 頁首 H1 標題 & 搜尋框 -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between;">
                 <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區；快速鍵 Alt 加 U" aria-label="回到萬寶屋創意實業社首頁與搜尋區">
                     <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:0.25rem;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
                 </a>
-                <button type="button" class="mobile-theme-btn theme-toggle-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
             </div>
             <div class="search-box">
                 <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
@@ -199,17 +90,20 @@
         </div>
     </header>
 
-    <!-- 🌟 首頁 Banner (無障礙修復：明確說明 Banner 內容) -->
+    <!-- 首頁 Banner -->
     <div id="home-banner-block" class="home-banner-wrapper">
         <img src="images/home-banner.png" alt="萬寶屋創意實業社形象橫幅：提供一站式專業辦公與公務採購，誠信經營、高效配送、開立完整簽呈核銷憑證" loading="eager">
     </div>
 
     <div class="container">
         <!-- RWD 手機版漢堡按鈕與遮罩 -->
-        <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
+        <div style="display: flex; gap: 8px; width: 100%;">
+            <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="開啟產品分類選單" aria-controls="sidebar-nav" aria-expanded="false">☰ 瀏覽商品分類</button>
+            <button type="button" class="theme-toggle-btn mobile-theme-btn" onclick="toggleTheme()" aria-label="切換深色/淺色模式">🌙 模式</button>
+        </div>
         <div class="menu-backdrop" id="menu-backdrop" onclick="toggleMobileMenu()"></div>
 
-        <!-- 🌟 左側選單：精簡 7 大主分類選單 -->
+        <!-- 左側選單 -->
         <nav role="navigation" class="sidebar-nav" id="sidebar-nav" aria-label="產品分類樹狀選單">
             <h2>
                 <a href="#sidebar-nav" id="accesskey-L" accesskey="L" tabindex="0" title="跳至左側產品分類選單區；快速鍵 Alt 加 L" aria-label="跳至左側產品分類選單區" style="color:#fff; text-decoration:none; display:inline-block;">
@@ -218,8 +112,8 @@
                 <button type="button" onclick="toggleMobileMenu()" aria-label="關閉選單">✕</button>
             </h2>
             <ul class="nav-tree">
-                <li><a href="index.html" id="link-home" style="display:flex; align-items:center; min-height:2.75rem; padding:0.5rem 0.875rem; font-weight:bold; text-decoration:none;">🏠 首頁 / 推薦商品</a></li>
-                <li><a href="javascript:void(0)" onclick="filterGlobalEco()" id="link-eco" style="color:#15803d; font-weight:bold;">🌱 全站環保標章專區</a></li>
+                <li><a href="index.html" id="link-home" class="active" style="display:flex; align-items:center; min-height:2.75rem; padding:0.5rem 0.875rem; font-weight:bold; text-decoration:none;">🏠 首頁 / 推薦商品</a></li>
+                <li><a href="category.html?eco=true" id="link-eco" style="color:#15803d; font-weight:bold;">🌱 全站環保標章專區</a></li>
                 <li><a href="category.html?cate=new" id="link-new">★ 新品上市</a></li>
 
                 <li><a href="category.html?cate=01_00" id="link-01_00">1. 文具與美術教具</a></li>
@@ -232,7 +126,7 @@
             </ul>
         </nav>
 
-        <!-- 中央內容區 (Alt+C 快捷鍵區域) -->
+        <!-- 中央內容區 -->
         <main id="main-content" role="main" class="main-content" tabindex="-1">
             
             <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
@@ -245,7 +139,6 @@
                         </a>
                         <a href="index.html" title="點擊返回首頁">首頁</a>
                     </li>
-                    <li id="breadcrumb-parent-li" hidden><a href="" id="breadcrumb-parent-link">主分類</a></li>
                     <li id="breadcrumb-current" aria-current="page">精選推薦</li>
                 </ol>
             </nav>
@@ -276,34 +169,16 @@
                         </select>
                     </div>
 
-                    <!-- 無障礙修復：導航非空預設占位 -->
                     <nav id="pagination-nav-top" class="pagination-compact" aria-label="頂部分頁導航">
                         <span class="sr-only">頁面分頁載入中</span>
                     </nav>
                 </div>
             </div>
 
-            <!-- SEO 停用 JS 備援區塊 (修復 Freego 爬抓舊網址問題) -->
-            <noscript>
-                <section style="padding: 1.25rem; background: #fff; border: 0.125rem solid #8b0000; border-radius: 0.75rem; margin-bottom: 1.25rem;">
-                    <h2>📂 本站商品目錄專區 (無 JavaScript 備援版)</h2>
-                    <p>萬寶屋創意實業社提供豐富辦公與公務採購商品，請點擊下方分類瀏覽：</p>
-                    <ul style="line-height: 2;">
-                        <li><a href="category.html?cate=01_00">文具與美術教具目錄</a></li>
-                        <li><a href="category.html?cate=02_00">水電材料與修繕五金目錄</a></li>
-                        <li><a href="category.html?cate=03_00">3C 數位與電腦週邊目錄</a></li>
-                        <li><a href="category.html?cate=04_00">事務機器與辦公耗材目錄</a></li>
-                        <li><a href="category.html?cate=05_00">紙品帳簿與收納用品目錄</a></li>
-                        <li><a href="category.html?cate=06_00">本土童玩與懷舊民俗目錄</a></li>
-                        <li><a href="category.html?cate=07_00">其他綜合商品目錄</a></li>
-                    </ul>
-                </section>
-            </noscript>
-
             <!-- 動態商品宮格展示區 -->
             <section class="product-grid grid-5col" id="product-list" aria-label="商品宮格列表" tabindex="-1"></section>
 
-            <!-- 底部分頁區 (無障礙修復：預設非空) -->
+            <!-- 底部分頁區 -->
             <div class="pagination-bottom-wrapper">
                 <nav id="pagination-nav" class="pagination-compact" aria-label="底部分頁導航">
                     <span class="sr-only">頁面分頁載入中</span>
@@ -324,7 +199,7 @@
         </main>
     </div>
 
-    <!-- 商品詳情 Modal 彈窗 (無障礙修復：預覽圖預設 alt 非空) -->
+    <!-- 商品詳情 Modal 彈窗 -->
     <dialog id="product-detail-modal" class="product-modal" aria-labelledby="modal-title" aria-modal="true">
         <div class="modal-header-bar">
             <h3 id="modal-title">商品詳細資訊</h3>
@@ -347,9 +222,7 @@
             <button type="button" class="btn-print-spec" onclick="window.print()">🖨️ 列印採購規格頁</button>
         </div>
         <p class="desc-text" id="modal-desc">詳細文案資訊...</p>
-        
         <div id="modal-related-products" style="margin-top: 0.9375rem; padding-top: 0.75rem; border-top: 0.09375rem dashed var(--border-light);"></div>
-
         <button type="button" class="btn-close" onclick="closeModal()" style="margin-top: 0.9375rem;">關閉視窗 (Esc)</button>
     </dialog>
 
@@ -364,43 +237,31 @@
         <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區；快速鍵 Alt 加 Z" aria-label="跳至頁尾版權宣告區" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:0.25rem;">
             <span aria-hidden="true">:::</span>
         </a>
+        <div style="margin-bottom: 0.625rem; font-size: 0.92rem;">
+            <a href="anti_fraud.html" style="color: #ffcdd2; font-weight: bold; margin: 0 0.5rem;">🛡️ 反詐騙宣導</a> ｜ 
+            <a href="privacy.html" style="margin: 0 0.5rem;">隱私權政策</a> ｜ 
+            <a href="sitemap.html" style="margin: 0 0.5rem;">網站導覽</a> ｜ 
+            <a href="about_us.html" style="margin: 0 0.5rem;" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
+        </div>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
-            以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準 ｜ 
-            <a href="about_us.html" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
+            &copy; 2026 萬寶屋創意實業社電子型錄展示網
         </p>
     </footer>
 
-    <!-- 首頁動態邏輯 -->
     <script>
         function toggleTheme() {
             const isDark = document.documentElement.classList.toggle('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            const btns = document.querySelectorAll('.theme-toggle-btn');
-            btns.forEach(btn => {
+            document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
                 btn.innerText = isDark ? '☀️ 淺色' : '🌙 模式';
             });
             announceToSR(isDark ? "已切換至深色護眼模式" : "已切換至淺色高對比模式");
         }
 
-        const MAIN_CATE_MAP = {
-            "01": { name: "1. 文具與美術教具", code: "01_00" },
-            "02": { name: "2. 水電材料與修繕五金", code: "02_00" },
-            "03": { name: "3. 3C 數位與電腦週邊", code: "03_00" },
-            "04": { name: "4. 事務機器與辦公耗材", code: "04_00" },
-            "05": { name: "5. 紙品帳簿與收納用品", code: "05_00" },
-            "06": { name: "6. 本土童玩與懷舊民俗", code: "06_00" },
-            "07": { name: "7. 其他綜合商品", code: "07_00" }
-        };
-
-        const FEATURED_PRODUCT_IDS = [
-            "PRD-0001", "PRD-0005", "PRD-0006", "PRD-0014", "PRD-0022"
-        ];
-
-        const FALLBACK_SVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><rect width='100%' height='100%' fill='%23f1f5f9'/><text x='50%' y='50%' font-size='15' fill='%2364748b' font-weight='bold' dominant-baseline='middle' text-anchor='middle'>🖼️ 圖片建置中</text></svg>";
+        const FEATURED_PRODUCT_IDS = ["PRD-0001", "PRD-0005", "PRD-0006", "PRD-0014", "PRD-0022"];
+        const FALLBACK_SVG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><rect width='100%' height='100%' fill='%23f8fafc'/><rect x='10' y='10' width='280' height='280' rx='16' fill='%23ffffff' stroke='%23cbd5e1' stroke-width='2'/><circle cx='150' cy='120' r='40' fill='%23f1f5f9'/><path d='M135 125 L150 100 L165 125 Z' fill='%238b0000'/><text x='50%' y='190' font-size='15' font-weight='900' fill='%238b0000' font-family='sans-serif' text-anchor='middle'>萬寶屋創意實業社</text><text x='50%' y='215' font-size='12' font-weight='700' fill='%2364748b' font-family='sans-serif' text-anchor='middle'>📦 原廠正品 ‧ 品質保證</text></svg>";
 
         let currentCategoryItems = [];
-        let currentCate = null;
         let isEcoOnly = false;
         let isTaiwanOnly = false;
         let currentPriceRange = 'all';
@@ -410,82 +271,33 @@
         let currentActiveProduct = null;
         let lastFocusedElement = null;
 
+        function resetFilters() {
+            isEcoOnly = false;
+            isTaiwanOnly = false;
+            currentPriceRange = 'all';
+            currentSort = 'default';
+            currentPage = 1;
+
+            const ecoBox = document.getElementById('eco-only-checkbox');
+            const taiwanBox = document.getElementById('taiwan-only-checkbox');
+            const priceSelect = document.getElementById('price-range-select');
+            const sortSelect = document.getElementById('sort-select');
+
+            if (ecoBox) ecoBox.checked = false;
+            if (taiwanBox) taiwanBox.checked = false;
+            if (priceSelect) priceSelect.value = 'all';
+            if (sortSelect) sortSelect.value = 'default';
+
+            renderPage();
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const parentLi = document.getElementById('breadcrumb-parent-li');
-            const parentLink = document.getElementById('breadcrumb-parent-link');
-            const currentLi = document.getElementById('breadcrumb-current');
-            const cateTitleEl = document.getElementById('cate-title-display');
-            const bannerBlock = document.getElementById('home-banner-block');
-
-            const isDark = document.documentElement.classList.contains('dark-mode');
-            document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-                btn.innerText = isDark ? '☀️ 淺色' : '🌙 模式';
-            });
-
-            document.querySelectorAll(".sidebar-nav details").forEach(d => d.open = false);
-
-            if (urlParams.has('cate')) {
-                currentCate = urlParams.get('cate');
-            }
-
             const sourceProducts = (typeof PUBLISHED_PRODUCTS !== 'undefined' && PUBLISHED_PRODUCTS.length > 0) ? PUBLISHED_PRODUCTS : (typeof ALL_PRODUCTS !== 'undefined' ? ALL_PRODUCTS : []);
 
-            if (urlParams.get('eco') === 'true') {
-                filterGlobalEco();
-                return;
-            }
-
-            if (currentCate && sourceProducts.length > 0) {
-                if (bannerBlock) bannerBlock.style.display = 'none';
-
-                const cateMapData = (typeof CATE_MAP !== 'undefined') ? CATE_MAP : {};
-                const cateName = cateMapData[currentCate] || "分類商品";
-                document.title = `${cateName} - 萬寶屋創意實業社 電子型錄網`;
-
-                const mainPrefix = currentCate.split('_')[0];
-                if (MAIN_CATE_MAP[mainPrefix] && !currentCate.endsWith('_00') && currentCate !== 'new') {
-                    if (parentLi) parentLi.hidden = false;
-                    if (parentLink) {
-                        parentLink.innerText = MAIN_CATE_MAP[mainPrefix].name;
-                        parentLink.href = `category.html?cate=${MAIN_CATE_MAP[mainPrefix].code}`;
-                    }
-                } else {
-                    if (parentLi) parentLi.hidden = true;
-                }
-                if (currentLi) currentLi.innerText = cateName;
-                if (cateTitleEl) cateTitleEl.innerText = cateName;
-
-                const activeLink = document.getElementById(`link-${currentCate}`);
-                if (activeLink) { 
-                    activeLink.classList.add('active'); 
-                    const parentDetails = activeLink.closest('details');
-                    if (parentDetails) { parentDetails.open = true; }
-                }
-
-                if (currentCate === 'new') {
-                    currentCategoryItems = sourceProducts.filter(p => p.isNew);
-                } else if (currentCate.endsWith('_00')) {
-                    const prefix = currentCate.split('_')[0];
-                    currentCategoryItems = sourceProducts.filter(p => p.categoryCode && p.categoryCode.startsWith(prefix));
-                } else {
-                    currentCategoryItems = sourceProducts.filter(p => p.categoryCode === currentCate);
-                }
-            } else {
-                if (bannerBlock) bannerBlock.style.display = 'block';
-                document.title = `首頁 - 萬寶屋創意實業社 電子型錄網`;
-                if (parentLi) parentLi.hidden = true;
-                if (currentLi) currentLi.innerText = "精選推薦";
-                if (cateTitleEl) cateTitleEl.innerText = "🔥 精選公務與熱門文具推薦";
-
-                const homeLink = document.getElementById("link-home");
-                if (homeLink) homeLink.classList.add("active");
-
-                if (sourceProducts.length > 0) {
-                    currentCategoryItems = sourceProducts.filter(p => FEATURED_PRODUCT_IDS.includes(p.id));
-                    if (currentCategoryItems.length < 5) {
-                        currentCategoryItems = sourceProducts.slice(0, 15);
-                    }
+            if (sourceProducts.length > 0) {
+                currentCategoryItems = sourceProducts.filter(p => FEATURED_PRODUCT_IDS.includes(p.id));
+                if (currentCategoryItems.length < 5) {
+                    currentCategoryItems = sourceProducts.slice(0, 15);
                 }
             }
 
@@ -495,36 +307,6 @@
             if (hash && hash.startsWith('#product-')) {
                 const productId = hash.replace('#product-', '');
                 openModal(productId, false);
-            }
-        });
-
-        function filterGlobalEco() {
-            const sourceProducts = (typeof PUBLISHED_PRODUCTS !== 'undefined' && PUBLISHED_PRODUCTS.length > 0) ? PUBLISHED_PRODUCTS : (typeof ALL_PRODUCTS !== 'undefined' ? ALL_PRODUCTS : []);
-            currentCategoryItems = sourceProducts.filter(p => p.isEco);
-            
-            const cateTitleEl = document.getElementById('cate-title-display');
-            if (cateTitleEl) {
-                cateTitleEl.innerHTML = `🌱 全站綠色採購與環保標章專區 <span style="font-size:0.9rem; color:#666; font-weight:normal;">（共 ${currentCategoryItems.length} 項認證商品）</span>`;
-            }
-            
-            document.title = `🌱 全站環保標章專區 - 萬寶屋創意實業社`;
-            document.querySelectorAll(".sidebar-nav a").forEach(l => l.classList.remove('active'));
-            document.getElementById('link-eco')?.classList.add('active');
-
-            const ecoCheckbox = document.getElementById('eco-only-checkbox');
-            if (ecoCheckbox) ecoCheckbox.checked = true;
-            isEcoOnly = true;
-            currentPage = 1;
-            renderPage();
-            announceToSR(`已為您篩選出全站 ${currentCategoryItems.length} 項綠色環保標章商品！`);
-        }
-
-        window.addEventListener('popstate', function(e) {
-            if (e.state && e.state.productId) {
-                openModal(e.state.productId, false);
-            } else {
-                const dialog = document.getElementById('product-detail-modal');
-                if (dialog && dialog.open) dialog.close();
             }
         });
 
@@ -551,16 +333,6 @@
                 toggle.setAttribute('aria-label', shouldOpen ? '關閉產品分類選單' : '開啟產品分類選單');
             }
         }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const nav = document.getElementById('sidebar-nav');
-                if (nav && nav.classList.contains('active')) {
-                    toggleMobileMenu(false);
-                    document.getElementById('mobile-menu-toggle')?.focus();
-                }
-            }
-        });
 
         function toggleEcoOnly(checked) {
             isEcoOnly = checked;
@@ -592,17 +364,13 @@
 
         function announceToSR(message) {
             const announcer = document.getElementById('sr-announcer');
-            if (announcer) {
-                announcer.innerText = message;
-            }
+            if (announcer) { announcer.innerText = message; }
         }
 
         function copyBarcode() {
             if (!currentActiveProduct) return;
             const code = currentActiveProduct.code || '未提供';
-            navigator.clipboard.writeText(code).then(() => {
-                alert(`已成功複製國際條碼：${code}`);
-            });
+            navigator.clipboard.writeText(code).then(() => { alert(`已成功複製國際條碼：${code}`); });
         }
 
         function copyGovFormat() {
@@ -610,9 +378,7 @@
             const p = currentActiveProduct;
             const ecoText = p.isEco ? "符合行政院環境部環保標章認證" : "一般合格商品";
             const text = `【公務採購商品】${p.title}\n【品牌/型號】${p.brand || '通用'} / ${p.model || '未標示'}\n【國際條碼】${p.code || '未提供'}\n【規格說明】${p.spec || '標準規格'}\n【產地來源】${p.origin || '未標示'}\n【綠色採購】${ecoText}\n【廠商名稱】萬寶屋創意實業社\n【訂購電話】(02) 2345-6789`;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("已成功複製公務簽呈格式！");
-            });
+            navigator.clipboard.writeText(text).then(() => { alert("已成功複製公務簽呈格式！"); });
         }
 
         function renderPage() {
@@ -623,12 +389,10 @@
             let items = currentCategoryItems.filter(p => {
                 if (isEcoOnly && !p.isEco) return false;
                 if (isTaiwanOnly && !p.isTaiwan) return false;
-
                 const numPrice = parseInt(String(p.price || '').replace(/[^\d]/g, '')) || 0;
                 if (currentPriceRange === '0-50' && numPrice > 50) return false;
                 if (currentPriceRange === '51-200' && (numPrice < 51 || numPrice > 200)) return false;
                 if (currentPriceRange === '201-up' && numPrice <= 200) return false;
-
                 return true;
             });
 
@@ -640,9 +404,9 @@
 
             if (items.length === 0) {
                 grid.innerHTML = `
-                    <div style="grid-column: 1/-1; padding: 2.5rem 1.25rem; text-align: center; color: #666;">
-                        <p style="font-size: 1.1rem; font-weight: bold; margin-bottom: 0.9375rem;">📦 該篩選條件下查無商品！</p>
-                        <a href="index.html" class="btn-detail" style="display: inline-block; width: auto; padding: 0.625rem 1.5rem; text-decoration: none;">🏠 返回首頁瀏覽熱門推薦</a>
+                    <div style="grid-column: 1/-1; text-align: center; padding: 40px 20px; background: var(--apca-bg-card); border: 2px dashed var(--apca-border); border-radius: 12px; margin: 20px 0;">
+                        <p style="font-size: 1.1rem; font-weight: bold; color: #64748b; margin-bottom: 12px;">📦 該篩選條件下查無商品，請嘗試切換條件！</p>
+                        <button type="button" onclick="resetFilters()" style="background: var(--primary-gradient); color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; min-height: 44px;">🔄 一鍵重置所有篩選條件</button>
                     </div>
                 `;
                 renderPagination(0);
@@ -650,8 +414,7 @@
             }
 
             let start = (currentPage - 1) * pageSize;
-            let end = start + pageSize;
-            let pageItems = items.slice(start, end);
+            let pageItems = items.slice(start, start + pageSize);
 
             pageItems.forEach(p => {
                 let badgeTagsHtml = '';
@@ -666,7 +429,7 @@
                 card.innerHTML = `
                     <div style="margin-bottom: 0.25rem;">${badgeTagsHtml}</div>
                     <div class="img-box">
-                        <img src="${imgSrc}" alt="${p.title}" class="product-img" loading="lazy">
+                        <img src="${imgSrc}" alt="${p.title} 商品照片" class="product-img" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>${p.title}</h3>
@@ -700,7 +463,7 @@
             }
 
             let totalPages = Math.ceil(totalItems / pageSize);
-            let html = `<span>共 <strong style="color:var(--primary-red);">${totalItems}</strong> 筆結果</span>`;
+            let html = `<span style="margin-right:8px;">共 <strong style="color:var(--primary-red);">${totalItems}</strong> 筆</span>`;
 
             if (currentPage > 1) {
                 html += `<a href="#page-${currentPage - 1}" onclick="goToPage(${currentPage - 1}); return false;" aria-label="上一頁">‹ 上一頁</a>`;
@@ -717,28 +480,24 @@
                 }
             }
 
-            let pageLinks = [];
             let l = null;
-
             for (let i of pages) {
                 if (l) {
                     if (i - l === 2) {
                         let pageNum = l + 1;
-                        pageLinks.push(`<a href="#page-${pageNum}" onclick="goToPage(${pageNum}); return false;" class="page-num" aria-label="第 ${pageNum} 頁">${pageNum}</a>`);
+                        html += `<a href="#page-${pageNum}" onclick="goToPage(${pageNum}); return false;" class="page-num">${pageNum}</a>`;
                     } else if (i - l > 2) {
-                        pageLinks.push(`<span style="color:#94a3b8; padding:0 0.125rem;">...</span>`);
+                        html += `<span class="disabled" style="border:none; background:transparent; padding:0 4px;">...</span>`;
                     }
                 }
                 
                 if (i === currentPage) {
-                    pageLinks.push(`<span class="page-num active" aria-current="page">${i}</span>`);
+                    html += `<span class="page-num active" aria-current="page">${i}</span>`;
                 } else {
-                    pageLinks.push(`<a href="#page-${i}" onclick="goToPage(${i}); return false;" class="page-num" aria-label="第 ${i} 頁">${i}</a>`);
+                    html += `<a href="#page-${i}" onclick="goToPage(${i}); return false;" class="page-num">${i}</a>`;
                 }
                 l = i;
             }
-
-            html += pageLinks.join(`<span style="color:#cbd5e1; margin:0 -0.125rem;">/</span>`);
 
             if (currentPage < totalPages) {
                 html += `<a href="#page-${currentPage + 1}" onclick="goToPage(${currentPage + 1}); return false;" aria-label="下一頁">下一頁 ›</a>`;
@@ -754,38 +513,7 @@
             currentPage = page;
             renderPage();
             announceToSR(`已切換至第 ${page} 頁`);
-            document.getElementById('product-list')?.focus({preventScroll: true});
             window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
-        }
-
-        function renderRelatedProducts(currentProduct) {
-            let relatedBox = document.getElementById("modal-related-products");
-            if (!relatedBox) return;
-
-            const sourceProducts = (typeof PUBLISHED_PRODUCTS !== 'undefined') ? PUBLISHED_PRODUCTS : ALL_PRODUCTS;
-            const subCatePrefix = currentProduct.id.substring(0, 5);
-            const relatedItems = sourceProducts.filter(p => p.id.startsWith(subCatePrefix) && p.id !== currentProduct.id).slice(0, 3);
-
-            if (relatedItems.length === 0) {
-                relatedBox.innerHTML = "";
-                return;
-            }
-
-            let html = `<div style="font-weight:bold; font-size:0.88rem; color:var(--primary-red); margin-bottom:0.5rem;">🔗 同類熱門商品與相關周邊推薦：</div>`;
-            html += `<div style="display:flex; gap:0.5rem; overflow-x:auto;">`;
-
-            relatedItems.forEach(item => {
-                html += `
-                    <div style="flex:1; min-width:5.625rem; background:var(--bg-main); border:0.0625rem solid var(--border-light); border-radius:0.375rem; padding:0.375rem; text-align:center; cursor:pointer;" onclick="openModal('${item.id}')">
-                        <img src="${item.img ? 'images/' + item.img : FALLBACK_SVG}" style="width:100%; height:2.8125rem; object-fit:contain;" alt="${item.title}">
-                        <div style="font-size:0.75rem; font-weight:bold; height:2.4em; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; margin-top:0.25rem;">${item.title}</div>
-                        <div style="font-size:0.75rem; color:var(--primary-red); font-weight:bold;">${item.price}</div>
-                    </div>
-                `;
-            });
-
-            html += `</div>`;
-            relatedBox.innerHTML = html;
         }
 
         function openModal(productId, updateHistory = true) {
@@ -823,13 +551,6 @@
             if (p.govProcurement && p.govProcurement !== '否') badges.push('🏛️ 適合公家採購');
             
             document.getElementById('modal-badges').innerHTML = badges.length > 0 ? badges.map(b => `<span style="color:var(--primary-red); margin-right:0.5rem; display:inline-block;">${b}</span>`).join('') : '<span>一般合格商品</span>';
-
-            renderRelatedProducts(p);
-
-            const specList = document.querySelector(".spec-list");
-            if (specList) {
-                specList.setAttribute("data-print-date", new Date().toLocaleDateString('zh-TW'));
-            }
 
             if (updateHistory) {
                 history.pushState({ productId: productId }, "", `#product-${productId}`);

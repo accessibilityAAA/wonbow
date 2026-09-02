@@ -1,7 +1,6 @@
 /* ==========================================================================
-   萬寶屋創意實業社 - 全站無障礙樣式表
+   萬寶屋創意實業社 - 全站無障礙樣式表 (雙欄終極排版修復版)
    設計標準：WCAG 2.2 AAA (7:1 對比度) ✕ WCAG 3.0 APCA (Lc 90+) 感知視覺演算
-   字體與佈局單位：全面採用相對單位 (rem / em / %) 支援使用者自由放大字體
    ========================================================================== */
 
 :root {
@@ -26,20 +25,33 @@
     color-scheme: light dark;
 }
 
-/* 強制消除全站 X 軸水平滾動溢出 */
+/* ==========================================================================
+   🌟 寬度零誤差鎖定 ✕ 全站強制靠 left/box-sizing 重置
+   ========================================================================== */
+
+/* 1.1 強制讓全站所有頁面都預留滾動條空間，防止滾動條出現/消失造成的畫面抖動與寬度微小落差 */
+html {
+    overflow-y: scroll !important;
+    scrollbar-gutter: stable; /* 現代瀏覽器專用：保持滾動條軌道寬度一致 */
+}
+
+/* 1.2 重置外邊距與預設算式 */
 html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
     max-width: 100% !important;
     overflow-x: hidden !important;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
+    direction: ltr !important;
+    text-align: left !important;
 }
 
 *, *::before, *::after { 
-    box-sizing: inherit; 
+    box-sizing: border-box !important; 
 }
 
 body {
-    margin: 0; 
-    padding: 0; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg-main) !important; 
     color: var(--text-color); 
@@ -187,14 +199,19 @@ body.dark-mode summary:focus-visible {
     top: 0; 
 }
 
+/* 1.3 統一全站大容器 (Container) 最高寬度與左右內邊距 (對齊 80rem / 1280px) */
 .top-bar-container, 
 .header-container, 
-.home-banner-wrapper, 
+.home-banner-wrapper,
+div.container,
 .container {
-    max-width: 80rem; 
-    margin-left: auto; 
-    margin-right: auto;
-    width: 100%;
+    max-width: 80rem !important; /* 1280px */
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0.9375rem !important; /* 15px */
+    padding-right: 0.9375rem !important; /* 15px */
+    box-sizing: border-box !important;
 }
 
 #main-content,
@@ -211,16 +228,16 @@ body.dark-mode summary:focus-visible {
 .top-bar { 
     background: #0f172a; 
     color: #94a3b8; 
-    padding: 0.5rem 1.25rem; 
+    padding: 0.5rem 0; 
     font-size: 0.88rem; 
     border-bottom: 0.0625rem solid rgba(255,255,255,0.08); 
     width: 100%;
 }
 
 .top-bar-container { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex !important; 
+    justify-content: space-between !important; 
+    align-items: center !important; 
     flex-wrap: wrap !important;
     gap: 0.625rem; 
 }
@@ -237,7 +254,8 @@ body.dark-mode summary:focus-visible {
     text-decoration: none;
     font-weight: bold;
     background: rgba(255,255,255,0.12);
-    padding: 0.2rem 0.75rem;
+    padding: 0.35rem 0.85rem;
+    min-height: 2.75rem;
     border-radius: 1.25rem;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -264,7 +282,10 @@ body.dark-mode summary:focus-visible {
 .top-bar-right a { 
     color: #cbd5e1; 
     text-decoration: none; 
-    padding: 0.25rem 0.5rem; 
+    padding: 0.35rem 0.625rem; 
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
     border-radius: 0.375rem; 
     transition: all 0.2s;
     font-weight: 600;
@@ -277,7 +298,7 @@ body.dark-mode summary:focus-visible {
 .site-header { 
     background: var(--primary-gradient); 
     color: #ffffff; 
-    padding: 0.875rem 1.25rem; 
+    padding: 0.875rem 0; 
     position: sticky; 
     top: 0; 
     z-index: 500; 
@@ -286,7 +307,6 @@ body.dark-mode summary:focus-visible {
     width: 100%;
 }
 
-/* 桌機版 Header：網站標題與搜尋框併排 */
 .header-container { 
     display: flex !important; 
     justify-content: space-between !important; 
@@ -314,7 +334,6 @@ body.dark-mode summary:focus-visible {
     text-decoration: none; 
 }
 
-/* 搜尋外框容器 (設定最小寬度防擠壓) */
 .search-box { 
     position: relative !important; 
     display: flex !important; 
@@ -332,6 +351,7 @@ body.dark-mode summary:focus-visible {
     font-size: 0.88rem !important; 
     width: 16rem !important;
     min-width: 13rem !important;
+    height: 2.75rem !important;
     flex-shrink: 0 !important;
     color: #0f172a !important; 
     background: #ffffff !important;
@@ -349,6 +369,7 @@ body.dark-mode summary:focus-visible {
     color: #000000 !important; 
     border: none !important; 
     padding: 0.5rem 1.25rem !important; 
+    height: 2.75rem !important;
     border-radius: 1.5625rem !important; 
     font-weight: 800 !important; 
     cursor: pointer !important; 
@@ -362,7 +383,6 @@ body.dark-mode summary:focus-visible {
     transform: translateY(-0.125rem);
 }
 
-/* 🌟 搜尋下拉選單（包含熱門關鍵字與即時建議，強制深色字體） */
 .search-dropdown {
     position: absolute !important;
     top: 100% !important;
@@ -374,7 +394,8 @@ body.dark-mode summary:focus-visible {
     box-shadow: 0 1.25rem 1.875rem -0.625rem rgba(0,0,0,0.25) !important;
     z-index: 9999 !important;
     margin-top: 0.5rem !important;
-    overflow: hidden !important;
+    overflow-y: auto !important;
+    max-height: 60vh !important;
     display: none;
     text-align: left !important;
 }
@@ -393,7 +414,8 @@ body.dark-mode summary:focus-visible {
     justify-content: space-between !important;
     align-items: center !important;
     padding: 0.75rem 1rem !important;
-    color: #0f172a !important; /* 🌟 強制黑藍色文字 */
+    min-height: 2.75rem !important;
+    color: #0f172a !important;
     text-decoration: none !important;
     border-bottom: 0.0625rem solid #f1f5f9 !important;
     font-size: 0.9rem !important;
@@ -405,7 +427,7 @@ body.dark-mode summary:focus-visible {
 
 .search-dropdown .dropdown-item .item-title,
 .search-dropdown .dropdown-item span {
-    color: #0f172a !important; /* 🌟 確保子層文字顯示清晰 */
+    color: #0f172a !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
 }
@@ -433,7 +455,7 @@ body.dark-mode summary:focus-visible {
 .search-dropdown .dropdown-item.is-active .item-title,
 .search-dropdown .dropdown-item:hover span,
 .search-dropdown .dropdown-item.is-active span {
-    color: #8b0000 !important; /* 滑鼠懸停變為品牌紅色 */
+    color: #8b0000 !important;
 }
 
 .search-dropdown .no-match {
@@ -444,14 +466,11 @@ body.dark-mode summary:focus-visible {
 }
 
 /* ==========================================================================
-   3. 全寬 Banner 區塊（依原圖比例完整縮放展現）
+   3. 全寬 Banner 區塊
    ========================================================================== */
 .home-banner-wrapper { 
-    margin: 1rem auto; 
-    padding: 0 0.9375rem; 
-    text-align: center; 
-    width: 100% !important;
-    max-width: 80rem !important;
+    margin: 1rem auto !important; 
+    text-align: center !important; 
 }
 
 .home-banner-wrapper img { 
@@ -467,7 +486,6 @@ body.dark-mode summary:focus-visible {
     margin: 0 auto; 
 }
 
-/* 螢幕寬度小於等於 992px 時自動隱藏 Banner */
 @media (max-width: 992px) {
     .home-banner-wrapper,
     #home-banner-block {
@@ -476,28 +494,34 @@ body.dark-mode summary:focus-visible {
 }
 
 /* ==========================================================================
-   4. 左側選單與主要內容 (桌機版)
+   4. 桌機版 核心雙欄容器重構 (修復選單偏右與內容豎排)
    ========================================================================== */
+div.container,
 .container { 
-    display: flex; 
-    gap: 1.5625rem; 
-    padding: 0 0.9375rem; 
-    margin-bottom: 2.5rem; 
-    margin-top: 1rem; 
-    width: 100%;
+    display: flex !important; 
+    flex-direction: row !important; /* 強制水平由左至右 */
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    gap: 1.5625rem !important; 
+    margin-top: 1rem !important;
+    margin-bottom: 2.5rem !important;
 }
 
 .sidebar-nav { 
-    width: 15.625rem; 
+    width: 15.625rem !important; 
+    min-width: 15.625rem !important;
+    max-width: 15.625rem !important;
     border: 0.125rem solid var(--border-strong) !important; 
-    border-radius: 1rem; 
-    background: var(--light-gray); 
-    flex-shrink: 0; 
-    box-shadow: var(--card-shadow);
-    align-self: flex-start;
+    border-radius: 1rem !important; 
+    background: var(--light-gray) !important; 
+    flex: 0 0 15.625rem !important; /* 強制固定 250px 不變形 */
+    box-shadow: var(--card-shadow) !important;
     position: sticky !important;
     top: 5.3125rem !important;
-    z-index: 10;
+    z-index: 10 !important;
+    margin: 0 !important;
+    display: block !important;
+    order: 1 !important; /* 確保永遠在左邊 */
 }
 
 .sidebar-nav h2 { 
@@ -553,15 +577,25 @@ body.dark-mode summary:focus-visible {
     border-left: 0.3125rem solid var(--primary-red) !important;
 }
 
+/* 桌機版：隱藏手機控制列的外層容器 */
+@media (min-width: 769px) {
+    .container > div:has(> .mobile-menu-btn) {
+        display: none !important;
+    }
+}
+
 .mobile-menu-btn,
+.mobile-theme-btn,
 .menu-backdrop { 
-    display: none !important; 
+    display: none; 
 }
 
 .main-content { 
-    flex: 1; 
-    min-width: 0; 
-    width: 100%;
+    flex: 1 1 0% !important; /* 自動彈性擴展填滿右側 */
+    min-width: 0 !important; 
+    width: auto !important; 
+    margin: 0 !important;
+    order: 2 !important; /* 確保永遠在右邊 */
 }
 
 /* ==========================================================================
@@ -611,13 +645,13 @@ body.dark-mode summary:focus-visible {
     justify-content: space-between; 
     align-items: center; 
     flex-wrap: wrap; 
-    gap: 0.75rem; 
-    margin-bottom: 1rem; 
-    background: var(--light-gray);
-    padding: 0.75rem 1.125rem;
-    border-radius: 0.75rem;
-    border: 0.125rem solid var(--border-strong);
-    box-shadow: var(--card-shadow);
+    gap: 1rem; 
+    margin-bottom: 1.25rem; 
+    background: #ffffff;
+    padding: 1rem 1.25rem;
+    border-radius: 0.875rem;
+    border: 0.0625rem solid #cbd5e1;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.03);
     width: 100%;
 }
 
@@ -631,26 +665,46 @@ body.dark-mode summary:focus-visible {
 
 .toolbar-right-box {
     display: flex;
-    gap: 0.9375rem;
+    gap: 1rem;
     align-items: center;
     flex-wrap: wrap;
 }
 
 .toolbar-controls {
     display: flex;
-    gap: 0.625rem;
+    gap: 0.75rem;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.toolbar-controls label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-height: 2.75rem;
+    padding: 0 0.25rem;
+}
+
+.toolbar-controls select {
+    border: 0.0625rem solid var(--border-strong);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    height: 2.75rem;
+    background: #ffffff;
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 /* ==========================================================================
    6. 商品宮格卡片 (桌機 3 欄)
    ========================================================================== */
 .grid-5col { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1rem; 
-    width: 100%;
+    display: grid !important; 
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 1rem !important; 
+    width: 100% !important;
 }
 
 .product-card { 
@@ -719,7 +773,7 @@ body.dark-mode summary:focus-visible {
     border-radius: 0.5rem; 
     width: 100%; 
     font-size: 0.88rem; 
-    min-height: 2.375rem; 
+    min-height: 2.75rem; 
     box-shadow: 0 0.25rem 0.625rem rgba(139, 0, 0, 0.2);
     margin-top: auto;
     text-decoration: none;
@@ -787,7 +841,7 @@ body.dark-mode summary:focus-visible {
     border-radius: 0.625rem !important; 
     cursor: pointer !important; 
     font-size: 0.9rem !important; 
-    min-height: 2.5rem !important; 
+    min-height: 2.75rem !important; 
 }
 
 /* ==========================================================================
@@ -804,11 +858,11 @@ body.dark-mode summary:focus-visible {
 }
 
 @media (max-width: 992px) {
-    .grid-5col { grid-template-columns: repeat(2, 1fr); gap: 0.875rem; }
+    .grid-5col { grid-template-columns: repeat(2, 1fr) !important; gap: 0.875rem !important; }
 }
 
 /* ==========================================================================
-   🌟 RWD 手機版極致優化
+   🌟 RWD 手機版極致優化 (768px 以下)
    ========================================================================== */
 @media (max-width: 768px) {
     .top-bar,
@@ -817,17 +871,20 @@ body.dark-mode summary:focus-visible {
         display: none !important;
     }
 
+    div.container,
     .container { 
-        flex-direction: column; 
-        gap: 0.625rem; 
-        margin-top: 0.625rem;
-        padding: 0 0.625rem;
+        flex-direction: column !important; 
+        gap: 0.625rem !important; 
+        margin-top: 0.625rem !important;
+        padding-left: 0.625rem !important;
+        padding-right: 0.625rem !important;
     }
 
     .header-container {
         flex-direction: column !important;
         align-items: stretch !important;
         gap: 0.5rem !important;
+        padding: 0 8px !important;
     }
 
     .site-header h1 {
@@ -835,15 +892,24 @@ body.dark-mode summary:focus-visible {
     }
 
     .search-box {
-        max-width: 100% !important;
         width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        gap: 6px !important;
     }
 
     .search-box input {
-        width: 100% !important;
+        flex: 1 !important;
+        width: 0 !important;
         min-width: 0 !important;
-        font-size: 0.88rem !important;
-        padding: 0.5rem 0.875rem !important;
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .search-box button {
+        padding: 6px 16px !important;
+        font-size: 0.85rem !important;
+        flex-shrink: 0 !important;
     }
 
     .mobile-menu-btn {
@@ -858,13 +924,35 @@ body.dark-mode summary:focus-visible {
         font-weight: 900 !important; 
         border-radius: 0.625rem; 
         cursor: pointer; 
-        width: 100%; 
+        flex: 1;
         min-height: 2.75rem; 
-        margin: 0.125rem 0 0.5rem 0;
+        margin: 0;
+    }
+
+    .mobile-theme-btn {
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        background: #0f172a !important;
+        color: #ffffff !important;
+        border: 1.5px solid #334155 !important;
+        padding: 0 14px !important;
+        border-radius: 10px !important;
+        font-weight: bold !important;
+        font-size: 0.9rem !important;
+        cursor: pointer;
+        white-space: nowrap;
+        min-height: 2.75rem;
+    }
+
+    body.dark-mode .mobile-theme-btn {
+        background: #f1f5f9 !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
     }
 
     .sidebar-nav {
-        display: none; 
+        display: none !important; 
         position: fixed !important; 
         top: 0 !important; 
         left: 0 !important; 
@@ -888,83 +976,100 @@ body.dark-mode summary:focus-visible {
     }
     .menu-backdrop.active { display: block !important; }
 
+    .main-content {
+        width: 100% !important;
+    }
+
     .page-toolbar {
-        padding: 0.625rem 0.75rem !important;
-        margin-bottom: 0.625rem !important;
-        gap: 0.5rem !important;
+        padding: 10px 12px !important;
+        gap: 8px !important;
+        margin-bottom: 10px !important;
     }
 
     .page-toolbar h1 {
-        font-size: 1.05rem !important;
-    }
-
-    .toolbar-right-box {
-        width: 100% !important;
-        gap: 0.375rem !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 4px !important;
     }
 
     .toolbar-controls {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
         width: 100% !important;
-        justify-content: space-between !important;
-        gap: 0.375rem !important;
+    }
+
+    .toolbar-controls label {
+        font-size: 0.82rem !important;
+        white-space: nowrap !important;
+        min-height: 2.5rem !important;
     }
 
     .toolbar-controls select {
-        flex: 1 !important;
-        padding: 0.2rem 0.375rem !important;
+        width: 100% !important;
+        padding: 4px 6px !important;
         font-size: 0.82rem !important;
+        height: 2.5rem !important;
     }
 
-    /* 手機版單欄條列式 (List View) */
-    .grid-5col { 
-        grid-template-columns: 1fr !important; 
-        gap: 0.625rem !important; 
+    #pagination-nav-top .page-num,
+    #pagination-nav-top span:not(.disabled):not(.active) {
+        display: none !important;
     }
 
+    /* 手機版恢復單欄直排大卡片 */
     .product-card {
-        flex-direction: row !important;
-        align-items: center !important;
-        text-align: left !important;
-        padding: 0.75rem 0.875rem !important;
-        gap: 0.75rem !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: center !important;
+        padding: 1rem !important;
+        gap: 0.5rem !important;
+    }
+
+    .product-card .img-box {
+        width: 100% !important;
+        height: 11rem !important; /* 約 176px */
+        max-height: 11rem !important;
+        margin: 0 0 0.5rem 0 !important;
+    }
+
+    .product-card .product-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
     }
 
     .product-info {
-        flex: 1 !important;
-        text-align: left !important;
+        width: 100% !important;
+        text-align: center !important;
     }
 
     .product-info h3 {
-        font-size: 0.92rem !important;
+        text-align: center !important;
+        font-size: 0.98rem !important;
+        margin: 0.25rem 0 !important;
         height: auto !important;
-        margin: 0.125rem 0 0.25rem 0 !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
     }
 
-    .product-info .price {
-        text-align: left !important;
-        font-size: 1rem !important;
-        margin: 0.125rem 0 !important;
-    }
-
-    .product-info .code {
-        text-align: left !important;
-        margin: 0.125rem 0 0.375rem 0 !important;
+    .product-info p {
+        text-align: center !important;
+        margin: 0.2rem 0 !important;
     }
 
     .btn-detail {
-        width: auto !important;
-        padding: 0.375rem 0.875rem !important;
-        min-height: 2rem !important;
-        font-size: 0.8rem !important;
-        align-self: flex-start !important;
+        width: 100% !important;
+        margin-top: 0.5rem !important;
+        align-self: center !important;
     }
 
     .pagination-compact {
         width: 100% !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
+        margin-top: 4px !important;
+        padding-top: 6px !important;
+        border-top: 1px dashed #e2e8f0 !important;
         font-size: 0.82rem !important;
     }
 }
@@ -977,7 +1082,7 @@ body.dark-mode summary:focus-visible {
     
     .pagination-compact {
         width: 100% !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
     }
 
     .search-box input {
@@ -1004,37 +1109,82 @@ body.dark-mode summary:focus-visible {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 0.2rem 0.5rem !important;
+    min-width: 2.75rem !important;
+    height: 2.75rem !important;
+    padding: 0 0.625rem !important;
     color: var(--text-color) !important;
     text-decoration: none !important;
     border-radius: 0.375rem !important;
+    border: 0.0625rem solid var(--border-light) !important;
+    background: #ffffff !important;
+    box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.03) !important;
+    transition: all 0.15s ease !important;
+}
+
+.pagination-compact a:hover {
+    border-color: var(--primary-red) !important;
+    color: var(--primary-red) !important;
+    background: #fef2f2 !important;
+}
+
+.pagination-compact span.disabled {
+    opacity: 0.4 !important;
+    cursor: not-allowed !important;
+    border-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 .pagination-compact span.page-num.active {
-    color: #d97706 !important;
+    color: #ffffff !important;
     font-weight: 900 !important;
-    font-size: 1.05rem !important;
-    background: var(--hover-orange-light) !important;
+    font-size: 0.95rem !important;
+    background: var(--primary-red) !important;
+    border-color: var(--primary-red) !important;
+    box-shadow: 0 0.125rem 0.375rem rgba(139, 0, 0, 0.3) !important;
 }
 
 .pagination-bottom-wrapper {
     display: flex !important;
     justify-content: center !important;
-    margin: 1.25rem 0 0.625rem 0 !important;
-    padding: 0.625rem !important;
+    margin: 1.5rem 0 0.625rem 0 !important;
+    padding: 0.75rem !important;
     background: var(--light-gray) !important;
-    border: 0.09375rem solid var(--border-light) !important;
-    border-radius: 0.75rem !important;
+    border: 0.0625rem solid var(--border-light) !important;
+    border-radius: 0.875rem !important;
     box-shadow: var(--card-shadow) !important;
     width: 100% !important;
 }
 
-/* 上架極簡版補丁 */
-.product-card .img-box, 
-.product-card .code,
-#modal-img,
-#modal-code,
-.modal-action-btns,
-#modal-related-products img {
-    display: none !important;
+/* ==========================================================================
+   🖼️ 商品卡片圖片高度限制與補丁
+   ========================================================================== */
+
+.product-card .img-box {
+    display: block !important;
+    width: 100% !important;
+    height: 12.5rem !important; /* 強制固定圖片框高度 (約 200px) */
+    max-height: 12.5rem !important;
+    background: #f8fafc !important;
+    border-radius: 0.625rem !important;
+    overflow: hidden !important;
+    margin-bottom: 0.75rem !important;
+    border: 0.0625rem solid var(--border-light) !important;
+}
+
+.product-card .product-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    padding: 0.5rem !important;
+}
+
+.product-card {
+    padding: 1rem !important;
+    min-height: auto !important;
+}
+
+body.dark-mode .product-card .img-box {
+    background: #0f172a !important;
+    border-color: #334155 !important;
 }
