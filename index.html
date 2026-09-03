@@ -43,7 +43,7 @@
     }
     </script>
 
-    <!-- Google 結構化資料 2: 品牌組織與網站實體 JSON-LD (Schema.org) -->
+    <!-- Google 結構化資料 2: 品牌組織與網站實體 JSON-LD (包含 dateModified 內容新鮮度指標) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -70,6 +70,8 @@
           "url": "https://www.oneball.com/",
           "name": "萬寶屋創意實業社 電子型錄網",
           "description": "致力於無障礙與關懷弱勢、閃閃極速靜態網，全站品項 100% 嚴禁陸製，對接台灣/臺灣政府學校綠色採購法規。",
+          "datePublished": "2026-01-01T08:00:00+08:00",
+          "dateModified": "2026-09-04T08:00:00+08:00",
           "publisher": {
             "@id": "https://www.oneball.com/#organization"
           }
@@ -113,7 +115,7 @@
         </div>
     </div>
 
-    <!-- 頁首 H1 標題 & 搜尋框 -->
+    <!-- 頁首 H1 標題 & 搜尋框 (包含 WebMCP AI 宣告屬性) -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between;">
@@ -121,10 +123,10 @@
                     <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:0.25rem;">:::</span>萬寶屋創意實業社 (oneball) - 臺灣/台灣公務與學校採購網
                 </a>
             </div>
-            <div class="search-box">
-                <input type="search" id="site-search" placeholder="全站搜尋（如：台灣文具、隨身碟、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
+            <form class="search-box" toolname="search" tooldescription="Search products by keyword" onsubmit="executeFullSearch(document.getElementById('site-search').value); return false;">
+                <input type="search" id="site-search" name="query" toolparamdescription="Search query" placeholder="全站搜尋（如：台灣文具、隨身碟、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
                 <button type="button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
-            </div>
+            </form>
         </div>
     </header>
 

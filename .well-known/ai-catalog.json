@@ -1,0 +1,10 @@
+{
+  "specVersion": "1.0",
+  "items": [
+    {
+      "urn": "urn:air:oneball:catalog",
+      "mediaType": "application/json",
+      "url": "https://www.oneball.com/js/products.js"
+    }
+  ]
+}

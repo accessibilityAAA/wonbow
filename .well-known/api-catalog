@@ -1,0 +1,13 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.oneball.com/",
+      "service-doc": [
+        {
+          "href": "https://www.oneball.com/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}
