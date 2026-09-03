@@ -1,3 +1,15 @@
+# /robots.txt
 User-agent: *
 Allow: /
-Sitemap: https://www.oneball.com/sitemap.xml
+
+# Allow AI crawlers explicitly
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://accessibilityaaa.github.io/sitemap.xml
