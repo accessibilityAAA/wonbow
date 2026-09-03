@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">商品分類 - 萬寶屋創意實業社 電子型錄網</title>
+    <title id="page-title">商品分類 - 萬寶屋創意實業社 台灣/臺灣公務與學校採購網</title>
     
-    <!-- SEO 最佳化設定 & WCAG 3.0 前瞻宣告 -->
-    <meta name="description" content="提供政府機關、學校與企業採購文具、影印紙、筆類、修正用品及環保標章商品線上型錄。以 WCAG 2.2 AAA 為設計標準，並前瞻參考 WCAG 3.0 APCA 感知視覺演算精神。">
-    <meta name="keywords" content="文具分類,辦公用品,影印紙,鋼筆,中性筆,修正帶,綠色採購,環保標章,WCAG3.0">
+    <!-- SEO 最佳化設定 & 致力於無障礙宣告 -->
+    <meta name="description" content="提供臺灣/台灣政府機關、學校與企業採購文具、影印紙、筆類、3C隨身碟、修正用品及環保標章商品線上型錄。致力於推動數位無障礙與友善閱讀環境，關懷弱勢族群。">
+    <meta name="keywords" content="萬寶屋,oneball,台灣文具,臺灣文具,文具分類,辦公用品,影印紙,鋼筆,中性筆,修正帶,3C隨身碟,無線鍵鼠,綠色採購,環保標章,無障礙友善">
     <meta name="author" content="萬寶屋創意實業社">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#8b0000">
     <meta name="color-scheme" content="light dark">
 
     <!-- SEO 宣告標準網址 (Canonical Tag) -->
-    <link rel="canonical" href="https://www.wonbow-stationery.com/category.html">
+    <link rel="canonical" href="https://www.oneball.com/category.html">
 
     <!-- Open Graph (OG) 社群分享標籤 -->
-    <meta property="og:title" content="商品分類 - 萬寶屋創意實業社 電子型錄網">
-    <meta property="og:description" content="提供政府綠色採購、文具用品、辦公事務用品線上電子型錄展示">
+    <meta property="og:title" content="商品分類 - 萬寶屋創意實業社 台灣/臺灣公務與學校採購網">
+    <meta property="og:description" content="提供政府學校綠色採購、文具用品、3C隨身碟線上電子型錄展示">
     <meta property="og:image" content="images/home-banner.png">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="萬寶屋創意實業社電子型錄">
@@ -34,13 +34,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首頁",
-          "item": "https://www.wonbow-stationery.com/index.html"
+          "item": "https://www.oneball.com/index.html"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "商品分類",
-          "item": "https://www.wonbow-stationery.com/category.html"
+          "item": "https://www.oneball.com/category.html"
         }
       ]
     }
@@ -71,7 +71,6 @@
 
         :focus-visible { outline: 3px solid #facc15 !important; outline-offset: 4px !important; }
 
-        /* 🌟 修復對齊問題：修正 .top-bar-container 寬度與首頁（80rem）100% 一致 */
         .top-bar-container {
             display: flex !important;
             justify-content: space-between !important;
@@ -89,6 +88,15 @@
         }
         .breadcrumb li { display: flex; align-items: center; font-size: 0.95rem; }
         .breadcrumb li+li::before { content: "/"; margin-right: 8px; color: #94a3b8; }
+
+        .breadcrumb a {
+            color: var(--primary-red);
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
 
         .sidebar-nav h2 {
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
@@ -139,11 +147,11 @@
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
                 <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區 [Alt+U]" aria-label="萬寶屋創意實業社電子型錄首頁">
-                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 (oneball) - 電子型錄展示網
                 </a>
             </div>
             <div class="search-box">
-                <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
+                <input type="search" id="site-search" placeholder="全站搜尋（如：台灣文具、隨身碟、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
                 <button type="button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
             </div>
         </div>
@@ -193,7 +201,9 @@
                         </a>
                         <a href="index.html" title="點擊返回首頁">首頁</a>
                     </li>
-                    <li id="breadcrumb-parent-li" hidden><a href="" id="breadcrumb-parent-link">主分類</a></li>
+                    <li id="breadcrumb-parent-li">
+                        <a href="javascript:void(0)" id="breadcrumb-parent-link" onclick="handleMainCateClick(event)" title="點擊切換主分類或開啟選單">主分類</a>
+                    </li>
                     <li id="breadcrumb-current" aria-current="page">分類商品</li>
                 </ol>
             </nav>
@@ -284,7 +294,7 @@
             <a href="about_us.html" style="margin: 0 8px;">關於我們 (About Us)</a>
         </div>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶屋創意實業社電子型錄展示網
+            &copy; 2026 萬寶屋創意實業社 (oneball) 電子型錄展示網
         </p>
     </footer>
 
@@ -323,6 +333,19 @@
             return String(value || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
         }
 
+        function handleMainCateClick(event) {
+            const isMobile = window.innerWidth <= 768;
+            const parentLink = document.getElementById('breadcrumb-parent-link');
+            const targetHref = parentLink ? parentLink.getAttribute('data-href') : null;
+
+            if (isMobile) {
+                event.preventDefault();
+                toggleMobileMenu(true);
+            } else if (targetHref && targetHref !== 'javascript:void(0)') {
+                window.location.href = targetHref;
+            }
+        }
+
         function resetFilters() {
             isEcoOnly = false;
             isTaiwanOnly = false;
@@ -353,7 +376,7 @@
 
             if (urlParams.has('search')) {
                 const searchQuery = urlParams.get('search').trim();
-                document.title = `「${searchQuery}」搜尋結果 - 萬寶屋創意實業社`;
+                document.title = `「${searchQuery}」搜尋結果 - 萬寶屋創意實業社 (oneball)`;
 
                 const parentLi = document.getElementById('breadcrumb-parent-li');
                 if (parentLi) parentLi.hidden = true;
@@ -389,22 +412,27 @@
 
             const cateMapData = (typeof CATE_MAP !== 'undefined') ? CATE_MAP : {};
             const cateName = cateMapData[currentCate] || (MAIN_CATE_MAP[currentCate.split('_')[0]] ? MAIN_CATE_MAP[currentCate.split('_')[0]].name : "分類商品");
-            document.title = `${cateName} - 萬寶屋創意實業社`;
+            document.title = `${cateName} - 萬寶屋創意實業社 (oneball)`;
 
             const parentLi = document.getElementById('breadcrumb-parent-li');
             const parentLink = document.getElementById('breadcrumb-parent-link');
             const currentLi = document.getElementById('breadcrumb-current');
 
             const mainPrefix = currentCate.split('_')[0];
-            if (MAIN_CATE_MAP[mainPrefix] && !currentCate.endsWith('_00') && currentCate !== 'new') {
+            
+            if (MAIN_CATE_MAP[mainPrefix]) {
                 if (parentLi) parentLi.hidden = false;
                 if (parentLink) {
-                    parentLink.innerText = MAIN_CATE_MAP[mainPrefix].name;
-                    parentLink.href = `category.html?cate=${MAIN_CATE_MAP[mainPrefix].code}`;
+                    const mainCateCode = MAIN_CATE_MAP[mainPrefix].code;
+                    const mainCateName = MAIN_CATE_MAP[mainPrefix].name;
+                    
+                    parentLink.innerText = mainCateName;
+                    const targetUrl = `category.html?cate=${mainCateCode}`;
+                    parentLink.setAttribute('data-href', targetUrl);
+                    parentLink.href = targetUrl;
                 }
-            } else {
-                if (parentLi) parentLi.hidden = true;
             }
+
             if (currentLi) currentLi.innerText = cateName;
 
             const cateTitleEl = document.getElementById('cate-title-display');
@@ -444,9 +472,12 @@
                 cateTitleEl.innerHTML = `🌱 全站綠色採購與環保標章專區 <span style="font-size:0.9rem; color:#666; font-weight:normal;">（共 ${currentCategoryItems.length} 項認證商品）</span>`;
             }
             
-            document.title = `🌱 全站環保標章專區 - 萬寶屋創意實業社`;
+            document.title = `🌱 全站環保標章專區 - 萬寶屋創意實業社 (oneball)`;
             document.querySelectorAll(".sidebar-nav a").forEach(l => l.classList.remove('active'));
             document.getElementById('link-eco')?.classList.add('active');
+
+            const parentLi = document.getElementById('breadcrumb-parent-li');
+            if (parentLi) parentLi.hidden = true;
 
             const ecoCheckbox = document.getElementById('eco-only-checkbox');
             if (ecoCheckbox) ecoCheckbox.checked = true;

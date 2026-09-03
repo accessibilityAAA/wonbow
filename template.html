@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{TITLE}} - 萬寶屋創意實業社 電子型錄網</title>
+    <title>{{TITLE}} - 萬寶屋創意實業社 台灣/臺灣公務與學校採購網</title>
     
-    <!-- SEO & 無障礙前瞻宣告設定 -->
-    <meta name="description" content="{{TITLE}}。品牌：{{BRAND}}，型號：{{MODEL}}。規格：{{SPEC}}。建議售價：{{PRICE}}，國際條碼：{{CODE}}。{{DESC}}">
-    <meta name="keywords" content="{{TITLE}},{{BRAND}},{{MODEL}},萬寶文具,公務採購,{{CODE}},綠色採購,WCAG3.0">
+    <!-- SEO & 致力於無障礙宣告設定 -->
+    <meta name="description" content="{{TITLE}}。品牌：{{BRAND}}，型號：{{MODEL}}。規格：{{SPEC}}。建議售價：{{PRICE}}，國際條碼：{{CODE}}。{{DESC}}。萬寶屋創意實業社（oneball）致力於推動數位無障礙與關懷弱勢族群，提供台灣/臺灣學校與公家機關綠色採購品項。">
+    <meta name="keywords" content="{{TITLE}},{{BRAND}},{{MODEL}},萬寶屋,oneball,台灣文具,臺灣文具,公務採購,學校採購,{{CODE}},綠色採購,無障礙友善">
     <meta name="author" content="萬寶屋創意實業社">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#8b0000">
     <meta name="color-scheme" content="light dark">
 
     <!-- SEO 宣告標準網址 (Canonical Tag) -->
-    <link rel="canonical" href="https://www.wonbow-stationery.com/product/{{ID}}.html">
+    <link rel="canonical" href="https://www.oneball.com/product/{{ID}}.html">
 
     <!-- 社群 Open Graph 獨立分享卡片 -->
-    <meta property="og:title" content="{{TITLE}} - 萬寶屋創意實業社">
+    <meta property="og:title" content="{{TITLE}} - 萬寶屋創意實業社 (oneball)">
     <meta property="og:description" content="{{DESC}}">
-    <meta property="og:image" content="https://www.wonbow-stationery.com/images/{{IMAGE}}">
+    <meta property="og:image" content="https://www.oneball.com/images/{{IMAGE}}">
     <meta property="og:type" content="product">
     <meta property="og:site_name" content="萬寶屋創意實業社">
     <meta property="og:locale" content="zh_TW">
@@ -30,7 +30,7 @@
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "{{TITLE}}",
-      "image": "https://www.wonbow-stationery.com/images/{{IMAGE}}",
+      "image": "https://www.oneball.com/images/{{IMAGE}}",
       "description": "{{DESC}}",
       "sku": "{{ID}}",
       "mpn": "{{MODEL}}",
@@ -57,7 +57,6 @@
     <link rel="stylesheet" href="../style.css">
     <script src="../js/products.js"></script>
     <style>
-        /* 專屬商品內頁微調樣式 */
         .product-detail-card {
             background: #ffffff;
             border: 1px solid var(--border-light);
@@ -91,7 +90,6 @@
             flex: 1;
         }
         
-        /* 🌟 強制顯示被 CSS 補丁遮蔽的公務按鈕群 */
         .product-detail-info .modal-action-btns {
             display: flex !important;
             gap: 10px;
@@ -119,10 +117,8 @@
 </head>
 <body>
 
-    <!-- Skip Link (無障礙直達區塊) -->
     <a href="#main-content" class="skip-link">跳過導航選單，直接進入主要內容區</a>
 
-    <!-- 頂部資訊列 (簡化版與全站一致) -->
     <div class="top-bar">
         <div class="top-bar-container">
             <div class="top-bar-left">
@@ -140,22 +136,19 @@
         </div>
     </div>
 
-    <!-- 頁首 H1 標題 & 定位區 -->
     <header role="banner" class="site-header" id="header-area">
         <div class="header-container">
             <h1>
                 <a href="../index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區；快速鍵 Alt 加 U" aria-label="回到萬寶屋創意實業社首頁與搜尋區">
-                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:4px;">:::</span>萬寶屋創意實業社 (oneball) - 電子型錄展示網
                 </a>
             </h1>
         </div>
     </header>
 
     <div class="container">
-        <!-- 主要內容區 (Alt+C 定位點) -->
         <main id="main-content" role="main" class="main-content" tabindex="-1" style="width: 100%;">
             
-            <!-- WCAG 3.0 動態即時語音播報器 -->
             <div id="sr-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
             <nav aria-label="麵包屑導航" class="breadcrumb">
@@ -193,7 +186,6 @@
                             <dt>採購專線：</dt><dd><a href="tel:0223456789" style="color:var(--primary-red); font-weight:bold; text-decoration:none;" aria-label="撥打專線 02-2345-6789">(02) 2345-6789 📱 (點擊直撥)</a></dd>
                         </dl>
 
-                        <!-- 公務報帳與核銷工具按鈕 (已解鎖顯示) -->
                         <div class="modal-action-btns">
                             <button type="button" class="btn-copy-code" onclick="copyBarcode('{{CODE}}')">📋 複製國際條碼</button>
                             <button type="button" class="btn-copy-gov" onclick="copyGovFormat('{{TITLE}}', '{{BRAND}}', '{{MODEL}}', '{{CODE}}', '{{SPEC}}')">📝 複製公務簽呈格式</button>
@@ -205,12 +197,10 @@
         </main>
     </div>
 
-    <!-- 右下角懸浮按鈕 -->
     <div class="floating-btn-group" style="position: fixed; bottom: 25px; right: 25px; display: flex; flex-direction: column; gap: 10px; z-index: 999;">
         <a href="../index.html" class="float-home-btn" title="返回首頁" aria-label="返回電子型錄首頁" style="width: 45px; height: 45px; background: #0f172a; color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 1.2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.25); transition: all 0.2s ease;">🏠</a>
     </div>
 
-    <!-- 頁尾宣告區 (整合：反詐騙宣導、隱私權政策、網站導覽、關於我們) -->
     <footer role="contentinfo" class="site-footer" id="footer-area">
         <a href="javascript:void(0)" id="accesskey-Z" accesskey="Z" tabindex="0" title="跳至頁尾版權宣告區；快速鍵 Alt 加 Z" aria-label="跳至頁尾版權宣告區">
             <span aria-hidden="true" style="text-decoration:none; color:#ffeb3b; font-weight:bold; margin-right:4px;">:::</span>
@@ -222,12 +212,10 @@
             <a href="../about_us.html" style="margin: 0 8px;" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
         </div>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶屋創意實業社電子型錄展示網 ｜ 
-            以 WCAG 2.2 AAA 無障礙規範與 WCAG 3.0 APCA 視覺演算為設計標準
+            &copy; 2026 萬寶屋創意實業社 (oneball) 電子型錄展示網 ｜ 致力於數位無障礙與關懷弱勢族群
         </p>
     </footer>
 
-    <!-- JavaScript 複製與輔具播報功能 -->
     <script>
         function toggleTheme() {
             const isDark = document.documentElement.classList.toggle('dark-mode');
@@ -252,7 +240,7 @@
         }
 
         function copyGovFormat(title, brand, model, code, spec) {
-            const text = `【公務採購商品】${title}\n【品牌/型號】${brand || '通用'} / ${model || '未標記'}\n【國際條碼】${code || '未提供'}\n【規格說明】${spec || '標準規格'}\n【廠商名稱】萬寶屋創意實業社\n【訂購電話】(02) 2345-6789`;
+            const text = `【公務採購商品】${title}\n【品牌/型號】${brand || '通用'} / ${model || '未標記'}\n【國際條碼】${code || '未提供'}\n【規格說明】${spec || '標準規格'}\n【廠商名稱】萬寶屋創意實業社 (oneball)\n【訂購電話】(02) 2345-6789`;
             navigator.clipboard.writeText(text).then(() => {
                 alert("已成功複製公務採購簽呈文案格式！");
                 announceToSR("已成功複製公務採購簽呈文案格式");

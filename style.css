@@ -1,6 +1,6 @@
 /* ==========================================================================
-   萬寶屋創意實業社 - 全站無障礙樣式表 (雙欄終極排版修復版)
-   設計標準：WCAG 2.2 AAA (7:1 對比度) ✕ WCAG 3.0 APCA (Lc 90+) 感知視覺演算
+   萬寶屋創意實業社 (oneball) - 全站無障礙與視覺樣式表
+   設計標準：WCAG 2.2 AAA ✕ WCAG 3.0 APCA (Lc 90+) 友善閱讀與關懷弱勢
    ========================================================================== */
 
 :root {
@@ -25,17 +25,11 @@
     color-scheme: light dark;
 }
 
-/* ==========================================================================
-   🌟 寬度零誤差鎖定 ✕ 全站強制靠 left/box-sizing 重置
-   ========================================================================== */
-
-/* 1.1 強制讓全站所有頁面都預留滾動條空間，防止滾動條出現/消失造成的畫面抖動與寬度微小落差 */
 html {
     overflow-y: scroll !important;
-    scrollbar-gutter: stable; /* 現代瀏覽器專用：保持滾動條軌道寬度一致 */
+    scrollbar-gutter: stable;
 }
 
-/* 1.2 重置外邊距與預設算式 */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
@@ -60,9 +54,6 @@ body {
     font-size: 1rem;
 }
 
-/* ==========================================================================
-   深夜護眼模式 (Dark Mode) - WCAG 3.0 Lc 90+ 暗色視覺對比
-   ========================================================================== */
 html.dark-mode,
 body.dark-mode,
 :root[data-theme="dark"] {
@@ -148,7 +139,6 @@ body.dark-mode .eco-badge {
     border-color: #059669 !important;
 }
 
-/* 鍵盤聚焦高亮提示 (WCAG 2.2 AAA Focus Visible) */
 a:focus-visible, 
 button:focus-visible, 
 input:focus-visible, 
@@ -199,18 +189,17 @@ body.dark-mode summary:focus-visible {
     top: 0; 
 }
 
-/* 1.3 統一全站大容器 (Container) 最高寬度與左右內邊距 (對齊 80rem / 1280px) */
 .top-bar-container, 
 .header-container, 
 .home-banner-wrapper,
 div.container,
 .container {
-    max-width: 80rem !important; /* 1280px */
+    max-width: 80rem !important;
     width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 0.9375rem !important; /* 15px */
-    padding-right: 0.9375rem !important; /* 15px */
+    padding-left: 0.9375rem !important;
+    padding-right: 0.9375rem !important;
     box-sizing: border-box !important;
 }
 
@@ -222,9 +211,6 @@ div.container,
     scroll-margin-top: 6.5rem !important;
 }
 
-/* ==========================================================================
-   2. 頂部 Bar & Header 區塊
-   ========================================================================== */
 .top-bar { 
     background: #0f172a; 
     color: #94a3b8; 
@@ -465,9 +451,6 @@ div.container,
     text-align: center !important;
 }
 
-/* ==========================================================================
-   3. 全寬 Banner 區塊
-   ========================================================================== */
 .home-banner-wrapper { 
     margin: 1rem auto !important; 
     text-align: center !important; 
@@ -493,13 +476,10 @@ div.container,
     }
 }
 
-/* ==========================================================================
-   4. 桌機版 核心雙欄容器重構 (修復選單偏右與內容豎排)
-   ========================================================================== */
 div.container,
 .container { 
     display: flex !important; 
-    flex-direction: row !important; /* 強制水平由左至右 */
+    flex-direction: row !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     gap: 1.5625rem !important; 
@@ -514,14 +494,14 @@ div.container,
     border: 0.125rem solid var(--border-strong) !important; 
     border-radius: 1rem !important; 
     background: var(--light-gray) !important; 
-    flex: 0 0 15.625rem !important; /* 強制固定 250px 不變形 */
+    flex: 0 0 15.625rem !important;
     box-shadow: var(--card-shadow) !important;
     position: sticky !important;
     top: 5.3125rem !important;
     z-index: 10 !important;
     margin: 0 !important;
     display: block !important;
-    order: 1 !important; /* 確保永遠在左邊 */
+    order: 1 !important;
 }
 
 .sidebar-nav h2 { 
@@ -577,7 +557,6 @@ div.container,
     border-left: 0.3125rem solid var(--primary-red) !important;
 }
 
-/* 桌機版：隱藏手機控制列的外層容器 */
 @media (min-width: 769px) {
     .container > div:has(> .mobile-menu-btn) {
         display: none !important;
@@ -591,16 +570,13 @@ div.container,
 }
 
 .main-content { 
-    flex: 1 1 0% !important; /* 自動彈性擴展填滿右側 */
+    flex: 1 1 0% !important;
     min-width: 0 !important; 
     width: auto !important; 
     margin: 0 !important;
-    order: 2 !important; /* 確保永遠在右邊 */
+    order: 2 !important;
 }
 
-/* ==========================================================================
-   5. 麵包屑導航與工具列
-   ========================================================================== */
 .breadcrumb {
     margin-bottom: 0.75rem !important;
     width: 100%;
@@ -697,9 +673,6 @@ div.container,
     font-weight: 600;
 }
 
-/* ==========================================================================
-   6. 商品宮格卡片 (桌機 3 欄)
-   ========================================================================== */
 .grid-5col { 
     display: grid !important; 
     grid-template-columns: repeat(3, 1fr) !important; 
@@ -782,9 +755,6 @@ div.container,
     justify-content: center;
 }
 
-/* ==========================================================================
-   7. 商品詳情 Modal 彈窗
-   ========================================================================== */
 .product-modal { 
     border: 0.125rem solid var(--border-strong) !important; 
     border-radius: 1.25rem !important; 
@@ -844,9 +814,6 @@ div.container,
     min-height: 2.75rem !important; 
 }
 
-/* ==========================================================================
-   8. 頁尾
-   ========================================================================== */
 .site-footer { 
     background: var(--dark-footer); 
     color: #94a3b8; 
@@ -861,9 +828,6 @@ div.container,
     .grid-5col { grid-template-columns: repeat(2, 1fr) !important; gap: 0.875rem !important; }
 }
 
-/* ==========================================================================
-   🌟 RWD 手機版極致優化 (768px 以下)
-   ========================================================================== */
 @media (max-width: 768px) {
     .top-bar,
     .home-banner-wrapper,
@@ -874,42 +838,66 @@ div.container,
     div.container,
     .container { 
         flex-direction: column !important; 
-        gap: 0.625rem !important; 
-        margin-top: 0.625rem !important;
-        padding-left: 0.625rem !important;
-        padding-right: 0.625rem !important;
+        gap: 0.5rem !important; 
+        margin-top: 0.375rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
 
     .header-container {
         flex-direction: column !important;
-        align-items: stretch !important;
-        gap: 0.5rem !important;
-        padding: 0 8px !important;
+        gap: 0.375rem !important;
+        padding: 0 0.25rem !important;
     }
 
     .site-header h1 {
-        font-size: 1.15rem !important;
+        font-size: 1rem !important;
     }
 
-    .search-box {
+    .breadcrumb {
+        margin-bottom: 0.25rem !important;
+    }
+
+    .breadcrumb ol {
+        font-size: 0.8rem !important;
+        gap: 0.25rem !important;
+    }
+
+    .page-toolbar {
+        padding: 0.5rem !important;
+        gap: 0.375rem !important;
+        margin-bottom: 0.5rem !important;
+        border-radius: 0.5rem !important;
+    }
+
+    .page-toolbar h1, 
+    .page-toolbar h2 {
+        font-size: 0.95rem !important;
+        margin: 0 !important;
+    }
+
+    .toolbar-controls {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 0.375rem !important;
         width: 100% !important;
-        max-width: 100% !important;
-        display: flex !important;
-        gap: 6px !important;
     }
 
-    .search-box input {
-        flex: 1 !important;
-        width: 0 !important;
-        min-width: 0 !important;
-        padding: 6px 12px !important;
-        font-size: 0.85rem !important;
+    .toolbar-controls label {
+        font-size: 0.78rem !important;
+        min-height: 2rem !important;
     }
 
-    .search-box button {
-        padding: 6px 16px !important;
-        font-size: 0.85rem !important;
-        flex-shrink: 0 !important;
+    .toolbar-controls select {
+        width: 100% !important;
+        padding: 0.125rem 0.25rem !important;
+        font-size: 0.78rem !important;
+        height: 2rem !important;
+    }
+
+    #pagination-nav-top .page-num,
+    #pagination-nav-top span:not(.disabled):not(.active) {
+        display: none !important;
     }
 
     .mobile-menu-btn {
@@ -980,56 +968,26 @@ div.container,
         width: 100% !important;
     }
 
-    .page-toolbar {
-        padding: 10px 12px !important;
-        gap: 8px !important;
-        margin-bottom: 10px !important;
+    .grid-5col { 
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important; 
     }
 
-    .page-toolbar h1 {
-        font-size: 1.1rem !important;
-        margin-bottom: 4px !important;
-    }
-
-    .toolbar-controls {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px !important;
-        width: 100% !important;
-    }
-
-    .toolbar-controls label {
-        font-size: 0.82rem !important;
-        white-space: nowrap !important;
-        min-height: 2.5rem !important;
-    }
-
-    .toolbar-controls select {
-        width: 100% !important;
-        padding: 4px 6px !important;
-        font-size: 0.82rem !important;
-        height: 2.5rem !important;
-    }
-
-    #pagination-nav-top .page-num,
-    #pagination-nav-top span:not(.disabled):not(.active) {
-        display: none !important;
-    }
-
-    /* 手機版恢復單欄直排大卡片 */
     .product-card {
+        padding: 0.5rem !important;
+        border-radius: 0.5rem !important;
+        gap: 0.25rem !important;
         flex-direction: column !important;
         align-items: stretch !important;
         text-align: center !important;
-        padding: 1rem !important;
-        gap: 0.5rem !important;
     }
 
     .product-card .img-box {
         width: 100% !important;
-        height: 11rem !important; /* 約 176px */
-        max-height: 11rem !important;
-        margin: 0 0 0.5rem 0 !important;
+        height: 6.5rem !important;
+        max-height: 6.5rem !important;
+        margin: 0 0 0.25rem 0 !important;
+        padding: 0.25rem !important;
     }
 
     .product-card .product-img {
@@ -1045,9 +1003,10 @@ div.container,
 
     .product-info h3 {
         text-align: center !important;
-        font-size: 0.98rem !important;
-        margin: 0.25rem 0 !important;
-        height: auto !important;
+        font-size: 0.82rem !important;
+        line-height: 1.25 !important;
+        height: 2.5em !important;
+        margin: 0.125rem 0 !important;
         display: -webkit-box !important;
         -webkit-line-clamp: 2 !important;
         -webkit-box-orient: vertical !important;
@@ -1055,12 +1014,26 @@ div.container,
 
     .product-info p {
         text-align: center !important;
-        margin: 0.2rem 0 !important;
+        margin: 0.1rem 0 !important;
+    }
+
+    .product-info .price {
+        font-size: 0.9rem !important;
+        margin: 0 !important;
+    }
+
+    .product-info .code {
+        font-size: 0.72rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
     .btn-detail {
         width: 100% !important;
-        margin-top: 0.5rem !important;
+        padding: 0.25rem 0.375rem !important;
+        font-size: 0.78rem !important;
+        min-height: 2rem !important;
+        border-radius: 0.375rem !important;
+        margin-top: 0.25rem !important;
         align-self: center !important;
     }
 
@@ -1072,12 +1045,33 @@ div.container,
         border-top: 1px dashed #e2e8f0 !important;
         font-size: 0.82rem !important;
     }
+
+    .product-modal {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 0.875rem !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+    .spec-list {
+        grid-template-columns: 4.5rem 1fr !important;
+        padding: 0.5rem !important;
+        font-size: 0.82rem !important;
+        gap: 0.25rem !important;
+    }
+
+    .modal-action-btns button {
+        flex: 1 1 100% !important;
+        min-height: 2.25rem !important;
+        font-size: 0.82rem !important;
+    }
 }
 
 @media (max-width: 480px) {
     .grid-5col { 
-        grid-template-columns: 1fr !important;
-        gap: 0.75rem; 
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.5rem !important; 
     }
     
     .pagination-compact {
@@ -1090,9 +1084,6 @@ div.container,
     }
 }
 
-/* ==========================================================================
-   9. 分頁列
-   ========================================================================== */
 .pagination-compact {
     display: flex !important;
     align-items: center !important;
@@ -1156,14 +1147,10 @@ div.container,
     width: 100% !important;
 }
 
-/* ==========================================================================
-   🖼️ 商品卡片圖片高度限制與補丁
-   ========================================================================== */
-
 .product-card .img-box {
     display: block !important;
     width: 100% !important;
-    height: 12.5rem !important; /* 強制固定圖片框高度 (約 200px) */
+    height: 12.5rem !important;
     max-height: 12.5rem !important;
     background: #f8fafc !important;
     border-radius: 0.625rem !important;

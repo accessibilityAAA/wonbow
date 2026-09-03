@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">首頁 - 萬寶屋創意實業社 電子型錄網</title>
-    
-    <!-- SEO 最佳化設定 & WCAG 3.0 前瞻宣告 -->
-    <meta name="description" content="萬寶屋創意實業社專為政府機關、學校與企業提供文具採購、影印紙、筆類、修正用品及環保標章商品線上型錄。以 WCAG 2.2 AAA 為設計標準，並前瞻參考 WCAG 3.0 APCA 感知視覺演算精神。">
-    <meta name="keywords" content="文具分類,辦公用品,影印紙,鋼筆,中性筆,修正帶,綠色採購,環保標章,WCAG3.0,公務採購">
+    <title id="page-title">首頁 - 萬寶屋創意實業社 台灣/臺灣校園與公家機關綠色文具採購網</title>
+
+    <!-- SEO 最佳化設定 & 致力於無障礙與關懷弱勢宣告 -->
+    <meta name="description" content="萬寶屋創意實業社（oneball）專為臺灣/台灣政府機關、學校與企業採購提供文具、影印紙、筆類、修正用品、3C隨身碟、無線鍵鼠與環保標章商品電子型錄。致力於推動數位無障礙與友善閱讀環境，關懷弱勢族群。">
+    <meta name="keywords" content="萬寶屋,oneball,台灣文具,臺灣文具,文具行,學校採購,公家機關,綠色採購,環保標章,3C隨身碟,無線鍵鼠,非陸製,無障礙友善">
     <meta name="author" content="萬寶屋創意實業社">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="theme-color" content="#8b0000">
     <meta name="color-scheme" content="light dark">
 
     <!-- SEO 宣告標準網址 (Canonical Tag) -->
-    <link rel="canonical" href="https://www.wonbow-stationery.com/index.html">
+    <link rel="canonical" href="https://www.oneball.com/index.html">
+
+    <!-- AI Agent 指引檔聲明 -->
+    <link rel="author" type="text/plain" href="llms.txt">
 
     <!-- Open Graph (OG) 社群分享標籤 -->
-    <meta property="og:title" content="首頁 - 萬寶屋創意實業社 電子型錄網">
-    <meta property="og:description" content="提供政府綠色採購、文具用品、辦公事務用品線上電子型錄展示">
+    <meta property="og:title" content="首頁 - 萬寶屋創意實業社 台灣/臺灣校園與公家機關綠色文具採購網">
+    <meta property="og:description" content="專為台灣/臺灣政府機關與學校採購打造之綠色文具與 3C 隨身碟電子型錄，100% 嚴禁陸製，致力於數位無障礙與關懷弱勢。">
     <meta property="og:image" content="images/home-banner.png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="萬寶屋創意實業社電子型錄">
+    <meta property="og:site_name" content="萬寶屋創意實業社">
     <meta property="og:locale" content="zh_TW">
 
-    <!-- Google 結構化資料 (BreadcrumbList Schema) -->
+    <!-- Google 結構化資料 1: 麵包屑 BreadcrumbList Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -34,7 +37,42 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首頁",
-          "item": "https://www.wonbow-stationery.com/index.html"
+          "item": "https://www.oneball.com/index.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Google 結構化資料 2: 品牌組織與網站實體 JSON-LD (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.oneball.com/#organization",
+          "name": "萬寶屋創意實業社",
+          "alternateName": ["oneball", "萬寶屋文具"],
+          "url": "https://www.oneball.com/",
+          "logo": "https://www.oneball.com/images/home-banner.png",
+          "description": "萬寶屋創意實業社專為臺灣/台灣政府機關、學校與企業提供優質文具採購、辦公耗材、3C 數位隨身碟及環保標章綠色採購品項，致力於無障礙友善閱讀環境。",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+886-2-2345-6789",
+            "contactType": "customer service",
+            "areaServed": "TW",
+            "availableLanguage": ["zh-Hant"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.oneball.com/#website",
+          "url": "https://www.oneball.com/",
+          "name": "萬寶屋創意實業社 電子型錄網",
+          "description": "致力於無障礙與關懷弱勢、閃閃極速靜態網，全站品項 100% 嚴禁陸製，對接台灣/臺灣政府學校綠色採購法規。",
+          "publisher": {
+            "@id": "https://www.oneball.com/#organization"
+          }
         }
       ]
     }
@@ -80,11 +118,11 @@
         <div class="header-container">
             <div class="site-brand" style="display: flex; align-items: center; justify-content: space-between;">
                 <a href="index.html" id="accesskey-U" accesskey="U" tabindex="0" title="回到首頁與搜尋區；快速鍵 Alt 加 U" aria-label="回到萬寶屋創意實業社首頁與搜尋區">
-                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:0.25rem;">:::</span>萬寶屋創意實業社 - 電子型錄展示網
+                    <span aria-hidden="true" style="font-size:0.85rem; color:#ffeb3b; vertical-align:middle; margin-right:0.25rem;">:::</span>萬寶屋創意實業社 (oneball) - 臺灣/台灣公務與學校採購網
                 </a>
             </div>
             <div class="search-box">
-                <input type="search" id="site-search" placeholder="全站搜尋（如：黑筆、藍筆、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
+                <input type="search" id="site-search" placeholder="全站搜尋（如：台灣文具、隨身碟、修正帶）" autocomplete="off" aria-label="全站搜尋關鍵字">
                 <button type="button" aria-label="執行搜尋" onclick="executeFullSearch(document.getElementById('site-search').value)">搜尋</button>
             </div>
         </div>
@@ -92,7 +130,7 @@
 
     <!-- 首頁 Banner -->
     <div id="home-banner-block" class="home-banner-wrapper">
-        <img src="images/home-banner.png" alt="萬寶屋創意實業社形象橫幅：提供一站式專業辦公與公務採購，誠信經營、高效配送、開立完整簽呈核銷憑證" loading="eager">
+        <img src="images/home-banner.png" alt="萬寶屋創意實業社形象橫幅：提供一站式專業辦公與學校公務採購，誠信經營、高效配送、開立完整簽呈核銷憑證" loading="eager">
     </div>
 
     <div class="container">
@@ -144,7 +182,7 @@
             </nav>
 
             <div class="page-toolbar">
-                <h1 id="cate-title-display">🔥 精選公務與熱門文具推薦</h1>
+                <h1 id="cate-title-display">🔥 臺灣/台灣公家機關與學校熱門文具/3C推薦</h1>
                 
                 <div class="toolbar-right-box">
                     <div class="toolbar-controls">
@@ -175,6 +213,20 @@
                 </div>
             </div>
 
+            <!-- AI Agent & 靜態爬蟲預渲染內文區塊 -->
+            <section id="ai-agent-prerender-summary" class="sr-only" aria-label="文字版靜態商品型錄摘要區">
+                <h2>萬寶屋創意實業社 (oneball) - 臺灣/台灣學校與政府公務採購精選品項清單</h2>
+                <p>萬寶屋創意實業社致力於推動無障礙數位友善環境，關懷弱勢族群。提供 500 款全台知名大牌校園文具與綠色採購耗材（包含雄獅、3M、SDI手牌、利百代、自強、創見隨身碟、羅技無線鍵鼠、Panasonic、POLYWELL 等），100% 嚴禁陸製劣品並對接綠色採購法規。</p>
+                <ul>
+                    <li><strong>01_00 文具與美術教具：</strong> 臺灣/台灣製造 OB-100 蓋帽原子筆 ($10)、雄獅 NO.600/680/800 奇異筆 ($10~$18)、SDI 手牌迴紋針/長尾夾/10號省力訂書機、ABEL A3 切割墊 ($125)、紙博館 8K/4K 圖畫紙 ($105)、巨星粉彩紙 ($65)。</li>
+                    <li><strong>02_00 水電材料與修繕五金：</strong> WD-40 多功能金屬除銹潤滑劑 191ml ($115)、飛利浦 LED T8 燈管 (環保標章15201)、舞光 LED 平板燈 (證號16320)、億光 13W 燈泡 (證號14890)。</li>
+                    <li><strong>03_00 3C 數位與電腦週邊：</strong> 羅技 MK270R 無線鍵鼠組 ($829)、創見 JetFlash 790 64GB/128GB 無蓋隨身碟 ($539)、廣穎 Armor A66 2TB 軍規硬碟 ($3488)、POLYWELL 寶利威爾 Type-C To Lightning 30W / Type-C 60W / USB-A 快充線 ($100)、Panasonic 電池。</li>
+                    <li><strong>04_00 事務機器與辦公耗材：</strong> MAX HD-10D 訂書機 ($85)、MAX 10-1M 訂書針、A4/A3/4x6 護貝膠膜 (100mic)、清淨海環保洗碗精 (證號16110)、中油洗可麗洗衣精 (證號13794)、鹿頭牌 48mm 封箱膠帶。</li>
+                    <li><strong>05_00 紙品帳簿與收納用品：</strong> 自強西式 2 孔環保檔案夾 40H (證號11920)、新德/立強 11孔萬用透明資料袋 ($85~$140)、永豐餘清荷影印紙 (70g/80g)、百花/蒲公英 100% 再生衛生紙 (證號1880/11820)、鶴屋 A4 自黏標籤紙 ($220)。</li>
+                    <li><strong>07_00 其他綜合商品：</strong> 膳魔師 316 保溫瓶 (證號17820)、象印 真空保溫杯 (證號18310)、妙管家洗碗精 (證號15910)。</li>
+                </ul>
+            </section>
+
             <!-- 動態商品宮格展示區 -->
             <section class="product-grid grid-5col" id="product-list" aria-label="商品宮格列表" tabindex="-1"></section>
 
@@ -187,10 +239,10 @@
 
             <!-- SEO FAQ 區塊 -->
             <section class="seo-faq-block" style="margin-top: 1.875rem; padding: 1.25rem; background: var(--apca-bg-card); border: 0.125rem solid var(--apca-border); border-radius: 1rem; box-shadow: var(--card-shadow);">
-                <h2 style="color: var(--primary-red); margin-top: 0; font-size: 1.1rem; border-bottom: 0.125rem solid var(--primary-red); padding-bottom: 0.375rem;">📂 專業辦公文具與綠色採購 - 選購說明 FAQ</h2>
+                <h2 style="color: var(--primary-red); margin-top: 0; font-size: 1.1rem; border-bottom: 0.125rem solid var(--primary-red); padding-bottom: 0.375rem;">📂 臺灣/台灣專業辦公文具與綠色採購 - 選購說明 FAQ</h2>
                 <div style="font-size: 0.9rem; line-height: 1.7; color: var(--apca-text-main);">
-                    <p><strong>Q1：推薦專區與全站環保專區的商品是否符合公務採購規範？</strong><br>
-                    答：是的！萬寶屋創意實業社全站商品均經過嚴格品質檢驗，具備完整國際條碼與規格說明。符合行政院環境部環保標章之品項皆特別標示「🌱 環保標章」徽章，方便採購人員快速辨識與報帳備查。</p>
+                    <p><strong>Q1：推薦專區與全站環保專區的商品是否符合台灣/臺灣公務採購規範？</strong><br>
+                    答：是的！萬寶屋創意實業社（oneball）全站商品均經過嚴格品質檢驗，具備完整國際條碼與規格說明。符合行政院環境部環保標章之品項皆特別標示「🌱 環保標章」徽章，方便學校與公家機關採購人員快速辨識與報帳備查。</p>
 
                     <p style="margin-top: 0.5rem;"><strong>Q2：如何進行批量採購與簽呈準備？</strong><br>
                     答：點擊任意商品的「查看詳細介紹」後，即可使用「📝 複製公務簽呈格式」功能，快速取得包含商品品名、規格、國際條碼與綠色採購聲明之標準文案，大幅提昇公務核銷效率。</p>
@@ -244,7 +296,7 @@
             <a href="about_us.html" style="margin: 0 0.5rem;" aria-label="了解關於萬寶屋創意實業社的服務細節">關於我們 (About Us)</a>
         </div>
         <p style="display:inline-block; margin:0;">
-            &copy; 2026 萬寶屋創意實業社電子型錄展示網
+            &copy; 2026 萬寶屋創意實業社 (oneball) 電子型錄展示網
         </p>
     </footer>
 

@@ -1,6 +1,6 @@
 /* ==========================================================================
-   萬寶企業文具行
-   全站智慧搜尋 V2.4 (全面支援 Excel 28 欄位與全型號檢索版)
+   萬寶屋創意實業社 (oneball)
+   全站智慧搜尋 V2.5 (支援萬寶屋全新網域與關鍵字對接)
    ========================================================================== */
 
 let fuseEngine = null;
@@ -12,7 +12,6 @@ let searchState = {
     isOpen: false
 };
 
-// 取得當前可用的搜尋資料庫 (優先使用輕量化 SEARCH_INDEX)
 function getSearchDataSource() {
     if (typeof SEARCH_INDEX !== "undefined" && Array.isArray(SEARCH_INDEX) && SEARCH_INDEX.length > 0) {
         return SEARCH_INDEX;
@@ -51,7 +50,6 @@ function initFuseSearch() {
         return;
     }
 
-    // 🌟 全面升級：加入 brand 與 model 欄位權重
     const options = {
         includeScore: true,
         threshold: 0.4,
